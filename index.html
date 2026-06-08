@@ -3,144 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OptiTurn</title>
-    <link rel="stylesheet" href="style.css">
+    <title>OptiTurn - Optimiza tu tiempo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Iconos de Lucide para las tarjetas -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-<header>
+    <!-- 1. BARRA DE NAVEGACIÓN (HEADER) -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <div class="text-blue-700 font-bold text-2xl flex items-center gap-1">
+                    <i data-lucide="trending-up" class="w-6 h-6"></i> OptiTurn
+                </div>
+            </div>
+            
+            <!-- Menú -->
+            <nav class="hidden md:flex space-x-8 font-medium text-gray-600">
+                <a href="#" class="text-blue-700 border-b-2 border-blue-700 pb-1">Inicio</a>
+                <a href="#" class="hover:text-blue-700 transition">Funciones</a>
+                <a href="#" class="hover:text-blue-700 transition">Beneficios</a>
+                <a href="#" class="hover:text-blue-700 transition">Cómo funciona</a>
+                <a href="#" class="hover:text-blue-700 transition">Nosotros</a>
+                <a href="#" class="hover:text-blue-700 transition">Contacto</a>
+            </nav>
 
-    <div class="logo">OptiTurn</div>
-
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Funciones</a>
-        <a href="#">Beneficios</a>
-        <a href="#">Cómo funciona</a>
-        <a href="#">Nosotros</a>
-        <a href="#">Contacto</a>
-    </nav>
-
-    <button class="btn-register">Registrarse</button>
-
-</header>
-
-<section class="hero">
-
-    <div class="hero-text">
-
-        <h1>
-            Evita largas colas,<br>
-            optimiza tu tiempo
-        </h1>
-
-        <p>
-            Consulta la congestión en tiempo real,
-            reserva turnos virtuales y recibe
-            recomendaciones para elegir el mejor momento.
-        </p>
-
-        <div class="hero-buttons">
-
-            <button class="primary">
-                Descargar app
-            </button>
-
-            <button class="secondary">
-                Ver cómo funciona
-            </button>
-
+            <!-- Botones de Acción -->
+            <div class="flex items-center space-x-4">
+                <button class="bg-blue-700 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-800 transition">
+                    Registrarse
+                </button>
+                <button class="text-gray-600 hover:text-blue-700 p-2 rounded-md transition" title="Ingresar">
+                    <i data-lucide="log-in" class="w-5 h-5"></i>
+                </button>
+            </div>
         </div>
+    </header>
 
-    </div>
-
-    <div class="phone">
-        APP
-    </div>
-
-    <div class="stats">
-
-        <div class="card">
-            <p>Nivel de congestión</p>
-            <h3>ALTO</h3>
+    <!-- 2. SECCIÓN PRINCIPAL (HERO SECTION) -->
+    <!-- Se eliminó por completo el teléfono y el mapa de image_3dddde.png -->
+    <section class="bg-gradient-to-b from-blue-50 to-white py-24 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+                Evita largas colas, <br class="hidden sm:inline"> optimiza tu tiempo
+            </h1>
+            <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+                Consulta la congestión en tiempo real, reserva turnos virtuales y recibe recomendaciones para elegir siempre el mejor momento.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <button class="w-full sm:w-auto bg-blue-700 text-white px-8 py-3.5 rounded-md font-semibold shadow-md hover:bg-blue-800 transition">
+                    Descargar app
+                </button>
+                <button class="w-full sm:w-auto border-2 border-blue-700 text-blue-700 px-8 py-3 rounded-md font-semibold flex items-center justify-center gap-2 hover:bg-blue-50 transition">
+                    <i data-lucide="play-circle" class="w-5 h-5"></i> Ver cómo funciona
+                </button>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <p>Tiempo estimado</p>
-            <h3>45 min</h3>
+    <!-- 3. SECCIÓN DE FUNCIONALIDADES -->
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12">
+            Todo lo que necesitas en un solo lugar
+        </h2>
+        
+        <!-- Grid de Tarjetas -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <!-- Tarjeta 1 -->
+            <div class="bg-white p-6 rounded-lg border border-gray-200 text-center shadow-sm hover:shadow-md transition">
+                <div class="text-blue-600 flex justify-center mb-4">
+                    <i data-lucide="users" class="w-10 h-10"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Consulta congestión en tiempo real</h3>
+                <p class="text-sm text-gray-500">Visualiza el nivel de congestión antes de salir.</p>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="bg-white p-6 rounded-lg border border-gray-200 text-center shadow-sm hover:shadow-md transition">
+                <div class="text-blue-600 flex justify-center mb-4">
+                    <i data-lucide="calendar" class="w-10 h-10"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Reserva turnos virtuales</h3>
+                <p class="text-sm text-gray-500">Asegura tu atención sin hacer colas.</p>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="bg-white p-6 rounded-lg border border-gray-200 text-center shadow-sm hover:shadow-md transition">
+                <div class="text-blue-600 flex justify-center mb-4">
+                    <i data-lucide="bell" class="w-10 h-10"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Recibe alertas y recomendaciones</h3>
+                <p class="text-sm text-gray-500">Elige siempre los mejores horarios.</p>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="bg-white p-6 rounded-lg border border-gray-200 text-center shadow-sm hover:shadow-md transition">
+                <div class="text-blue-600 flex justify-center mb-4">
+                    <i data-lucide="map-pin" class="w-10 h-10"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Encuentra servicios cercanos</h3>
+                <p class="text-sm text-gray-500">Ubica establecimientos y rutas recomendadas.</p>
+            </div>
+
+            <!-- Tarjeta 5 -->
+            <div class="bg-white p-6 rounded-lg border border-gray-200 text-center shadow-sm hover:shadow-md transition">
+                <div class="text-blue-600 flex justify-center mb-4">
+                    <i data-lucide="bar-chart-3" class="w-10 h-10"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Historial y estadísticas</h3>
+                <p class="text-sm text-gray-500">Conoce tu tiempo ahorrado y tus actividades.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <p>Demanda actual</p>
-            <h3>📈</h3>
+    <!-- 4. PIE DE PÁGINA (FOOTER) -->
+    <footer class="bg-blue-50 border-t border-blue-100 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <!-- Info Izquierda -->
+            <div class="text-center md:text-left">
+                <div class="text-blue-700 font-bold text-xl flex items-center justify-center md:justify-start gap-1 mb-2">
+                    <i data-lucide="trending-up" class="w-5 h-5"></i> OptiTurn
+                </div>
+                <h4 class="text-lg font-bold text-gray-950">Comienza a optimizar tu tiempo hoy mismo</h4>
+                <p class="text-sm text-gray-600">Únete a miles de personas que ya están ahorrando tiempo con OptiTurn</p>
+            </div>
+
+            <!-- Botones Tiendas -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <!-- Google Play -->
+                <a href="#" class="bg-gray-900 text-white flex items-center gap-3 px-5 py-2.5 rounded-xl hover:bg-gray-800 transition shadow-sm w-44">
+                    <i data-lucide="play" class="w-6 h-6 fill-white"></i>
+                    <div class="text-left">
+                        <p class="text-[10px] uppercase text-gray-400 font-medium tracking-wider">Disponible en</p>
+                        <p class="text-sm font-semibold -mt-1">Google Play</p>
+                    </div>
+                </a>
+                <!-- App Store -->
+                <a href="#" class="bg-gray-900 text-white flex items-center gap-3 px-5 py-2.5 rounded-xl hover:bg-gray-800 transition shadow-sm w-44">
+                    <i data-lucide="apple" class="w-6 h-6 fill-white"></i>
+                    <div class="text-left">
+                        <p class="text-[10px] uppercase text-gray-400 font-medium tracking-wider">Descárgalo en el</p>
+                        <p class="text-sm font-semibold -mt-1">App Store</p>
+                    </div>
+                </a>
+            </div>
         </div>
+    </footer>
 
-    </div>
-
-</section>
-
-<section class="features">
-
-    <h2>Todo lo que necesitas en un solo lugar</h2>
-
-    <div class="feature-grid">
-
-        <div class="feature-card">
-            <div class="icon">👥</div>
-            <p>Consulta congestión en tiempo real</p>
-        </div>
-
-        <div class="feature-card">
-            <div class="icon">📅</div>
-            <p>Reserva turnos virtuales</p>
-        </div>
-
-        <div class="feature-card">
-            <div class="icon">🔔</div>
-            <p>Recibe alertas y recomendaciones</p>
-        </div>
-
-        <div class="feature-card">
-            <div class="icon">📍</div>
-            <p>Encuentra servicios cercanos</p>
-        </div>
-
-        <div class="feature-card">
-            <div class="icon">📊</div>
-            <p>Historial y estadísticas</p>
-        </div>
-
-    </div>
-
-</section>
-
-<footer>
-
-    <div>
-
-        <h3>
-            Comienza a optimizar tu tiempo hoy mismo
-        </h3>
-
-        <p>
-            Únete a miles de personas que ya están ahorrando tiempo con OptiTurn.
-        </p>
-
-    </div>
-
-    <div class="store-buttons">
-
-        <div class="store">
-            Google Play
-        </div>
-
-        <div class="store">
-            App Store
-        </div>
-
-    </div>
-
-</footer>
-
+    <!-- Inicialización de los Iconos -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
