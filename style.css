@@ -711,10 +711,34 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 6rem;
     color: var(--primary-blue);
     position: relative;
+    overflow: hidden;
 }
+
+/* Tamaño normal del celular en registro */
+.illustration-phone-svg i {
+    font-size: 6rem;
+}
+
+/* Ajuste del candado en iniciar sesión */
+.illustration-lock-svg {
+    gap: 8px;
+}
+
+/* Candado más pequeño */
+.illustration-lock-svg i {
+    font-size: 4.2rem;
+}
+
+/* Puntos más pequeños */
+.dots-pattern {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    line-height: 1;
+    transform: translateY(10px);
+}
+
 
 .check-badge {
     position: absolute;
