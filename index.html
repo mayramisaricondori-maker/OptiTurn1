@@ -3,143 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OptiTurn - Gestión de turnos y tiempo predicado</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Iconos de Lucide -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>OptiTurn - Evita largas colas, optimiza tu tiempo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
 
-    <!-- 1. BARRA DE NAVEGACIÓN (HEADER) -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <!-- LOGO OFICIAL ENLAZADO -->
-            <div class="flex items-center">
-                <img src="logo_optiturn.png" alt="OptiTurn Logo" class="h-12 w-auto object-contain">
-            </div>
-            
-            <!-- Menú de Navegación -->
-            <nav class="hidden md:flex space-x-8 font-medium text-gray-600">
-                <a href="#" class="text-blue-700 border-b-2 border-blue-700 pb-1">Inicio</a>
-                <a href="#" class="hover:text-blue-700 transition">Funciones</a>
-                <a href="#" class="hover:text-blue-700 transition">Beneficios</a>
-                <a href="#" class="hover:text-blue-700 transition">Cómo funciona</a>
-                <a href="#" class="hover:text-blue-700 transition">Nosotros</a>
-                <a href="#" class="hover:text-blue-700 transition">Contacto</a>
-            </nav>
-
-            <!-- Botones de Acción -->
-            <div class="flex items-center space-x-4">
-                <button class="bg-blue-700 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-800 transition">
-                    Registrarse
-                </button>
-                <button class="text-gray-600 hover:text-blue-700 p-2 rounded-md transition" title="Ingresar">
-                    <i data-lucide="log-in" class="w-5 h-5"></i>
-                </button>
+    <header>
+        <div class="navbar">
+            <div class="logo" onclick="navigateTo('inicio')">
+    <img src="logo_optiturn.png" alt="OptiTurn Logo" class="navbar-logo-img">
+</div>
+            <ul class="nav-menu">
+                <li><a class="nav-link active" id="link-inicio" onclick="navigateTo('inicio')">Inicio</a></li>
+                <li><a class="nav-link" id="link-nosotros" onclick="navigateTo('nosotros')">Sobre nosotros</a></li>
+                <li><a class="nav-link" id="link-reseñas" onclick="navigateTo('reseñas')">Reseñas</a></li>
+                <li><a class="nav-link" id="link-contacto" onclick="navigateTo('contacto')">Contáctanos</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button class="btn btn-primary" onclick="navigateTo('registro')">Registrarse</button>
+                <button class="btn btn-secondary" onclick="navigateTo('login')">Iniciar sesión</button>
             </div>
         </div>
     </header>
 
-    <!-- 2. SECCIÓN PRINCIPAL (HERO SECTION) -->
-    <section class="bg-gradient-to-b from-blue-50 to-white py-16 lg:py-24 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            <!-- TEXTOS Y BOTONES (IZQUIERDA) -->
-            <div class="text-center lg:text-left order-2 lg:order-1">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-                    Evita largas colas, <br class="hidden sm:inline"> optimiza tu tiempo
-                </h1>
-                <p class="text-lg text-gray-600 mb-10 max-w-xl mx-auto lg:mx-0">
-                    Consulta la congestión en tiempo real, reserva turnos virtuales y recibe recomendaciones para elegir siempre el mejor momento.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
-                    <button class="w-full sm:w-auto bg-blue-700 text-white px-8 py-3.5 rounded-md font-semibold shadow-md hover:bg-blue-800 transition">
-                        Descargar app
-                    </button>
-                    <button class="w-full sm:w-auto border-2 border-blue-700 text-blue-700 px-8 py-3 rounded-md font-semibold flex items-center justify-center gap-2 hover:bg-blue-50 transition">
-                        <i data-lucide="play-circle" class="w-5 h-5"></i> Ver cómo funciona
-                    </button>
+    <main id="view-inicio" class="page-section active-view">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Evita largas colas,<br>optimiza tu tiempo</h1>
+                <p>Consulta la congestión en tiempo real, reserva turnos virtuales y recibe recomendaciones para elegir siempre el mejor momento.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary-blue">Descargar app</button>
+                    <button class="btn btn-outline-blue" onclick="navigateTo('nosotros')"><i class="fa-regular fa-circle-play"></i> Ver cómo funciona</button>
                 </div>
             </div>
-
-            <!-- IMAGEN DE CELULAR (DERECHA) -->
-            <div class="flex justify-center order-1 lg:order-2">
-                <div class="relative w-full max-w-[280px] sm:max-w-[310px] drop-shadow-2xl hover:scale-102 transition duration-300">
-                    <img src="5bcb5af075b8271cf15bbfe3893c71d8375189f4 (1).png" alt="OptiTurn App Preview" class="w-full h-auto rounded-[40px]">
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 3. SECCIÓN DE FUNCIONALIDADES -->
-    <section class="py-20 px-6 max-w-7xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12">
-            Todo lo que necesitas en un solo lugar
-        </h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            <div class="bg-white p-6 rounded-lg border border-gray-200 text-center shadow-sm hover:shadow-md transition">
-                <div class="text-blue-600 flex justify-center mb-4"><i data-lucide="users" class="w-10 h-10"></i></div>
-                <h3 class="font-bold text-gray-900 mb-2">Consulta congestión en tiempo real</h3>
-                <p class="text-sm text-gray-500">Visualiza el nivel de congestión antes de salir.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg border border-gray-200 text-center shadow-sm hover:shadow-md transition">
-                <div class="text-blue-600 flex justify-center mb-4"><i data-lucide="calendar" class="w-10 h-10"></i></div>
-                <h3 class="font-bold text-gray-900 mb-2">Reserva turnos virtuales</h3>
-                <p class="text-sm text-gray-500">Asegura tu atención sin hacer colas.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg border border-gray-200 text-center shadow-sm hover:shadow-md transition">
-                <div class="text-blue-600 flex justify-center mb-4"><i data-lucide="bell" class="w-10 h-10"></i></div>
-                <h3 class="font-bold text-gray-900 mb-2">Recibe alertas y recomendaciones</h3>
-                <p class="text-sm text-gray-500">Elige siempre los mejores horarios.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg border border-gray-200 text-center shadow-sm hover:shadow-md transition">
-                <div class="text-blue-600 flex justify-center mb-4"><i data-lucide="map-pin" class="w-10 h-10"></i></div>
-                <h3 class="font-bold text-gray-900 mb-2">Encuentra servicios cercanos</h3>
-                <p class="text-sm text-gray-500">Ubica establecimientos y rutas recomendadas.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg border border-gray-200 text-center shadow-sm hover:shadow-md transition">
-                <div class="text-blue-600 flex justify-center mb-4"><i data-lucide="bar-chart-3" class="w-10 h-10"></i></div>
-                <h3 class="font-bold text-gray-900 mb-2">Historial y estadísticas</h3>
-                <p class="text-sm text-gray-500">Conoce tu tiempo ahorrado y tus actividades.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. PIE DE PÁGINA (FOOTER) -->
-    <footer class="bg-blue-50 border-t border-blue-100 py-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-            <div class="text-center md:text-left flex flex-col items-center md:items-start">
-                <!-- LOGO OFICIAL EN EL FOOTER -->
-                <img src="logo_optiturn.png" alt="OptiTurn Logo" class="h-10 w-auto object-contain mb-4">
-                <h4 class="text-lg font-bold text-gray-950">Comienza a optimizar tu tiempo hoy mismo</h4>
-                <p class="text-sm text-gray-600">Únete a miles de personas que ya están ahorrando tiempo con OptiTurn</p>
-            </div>
-
-            <!-- Botones Tiendas -->
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#" class="bg-gray-900 text-white flex items-center gap-3 px-5 py-2.5 rounded-xl hover:bg-gray-800 transition shadow-sm w-44">
-                    <i data-lucide="play" class="w-6 h-6 fill-white"></i>
-                    <div class="text-left">
-                        <p class="text-[10px] uppercase text-gray-400 font-medium tracking-wider">Disponible en</p>
-                        <p class="text-sm font-semibold -mt-1">Google Play</p>
+            <div class="hero-mockup">
+                <div class="phone-mockup">
+                    <div class="phone-header">
+                        <span>Hola, Juan</span>
+                        <div class="phone-search"><i class="fa-solid fa-magnifying-glass"></i> Buscar servicio o entidad</div>
                     </div>
+                    <div class="phone-card">
+                        <div class="phone-card-title">Congestión en tiempo real</div>
+                        <div class="phone-status">Estación Central <span class="status-badge-red">Alto</span></div>
+                    </div>
+                    <div class="phone-ticket">
+                        <div>Tu turno</div>
+                        <div class="ticket-number">A-125</div>
+                        <div>Estás en la fila virtual<br>Posición 12</div>
+                    </div>
+                </div>
+                <div class="desktop-panel">
+                    <div class="panel-header">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="panel-map">
+                            <div class="map-pin pin-1"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="map-pin pin-2"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="map-pin pin-3"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="map-pin pin-4"><i class="fa-solid fa-location-dot"></i></div>
+                        </div>
+                        <div class="panel-stats">
+                            <div class="stat-box"><span>Nivel de congestión</span><strong>Alto</strong></div>
+                            <div class="stat-box"><span>Tiempo estimado</span><strong>45 min</strong></div>
+                            <div class="stat-box"><span>Demanda actual</span><div class="chart-sim"><i class="fa-solid fa-chart-line"></i></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-main-title">Todo lo que necesitas en un solo lugar</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fa-solid fa-users"></i></div>
+                <h3>Consulta congestión en tiempo real</h3>
+                <p>Visualiza el nivel de congestión antes de salir.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fa-regular fa-calendar-check"></i></div>
+                <h3>Reserva turnos virtuales</h3>
+                <p>Asegura tu atención sin hacer colas.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fa-regular fa-bell"></i></div>
+                <h3>Recibe alertas y recomendaciones</h3>
+                <p>Elige siempre los mejores horarios</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fa-solid fa-location-dot"></i></div>
+                <h3>Encuentra servicios cercanos</h3>
+                <p>Ubica establecimientos y rutas recomendadas</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fa-solid fa-chart-simple"></i></div>
+                <h3>Historial y estadísticas</h3>
+                <p>Conoce tu tiempo ahorrado y tus actividades</p>
+            </div>
+        </div>
+    </main>
+
+    <section id="view-nosotros" class="page-section">
+        <div class="about-hero">
+            <div class="about-text-side">
+                <h2 class="title-left-blue">Sobre nosotros</h2>
+                <p>OptiTurn nace con la misión de mejorar la calidad de vida de las personas optimizando su tiempo en filas y trámites. Conectamos a los ciudadanos con información en tiempo real para que tomen decisiones inteligentes y ahorren tiempo cada día.</p>
+            </div>
+            <div class="about-image-side">
+                <div class="family-illustration">
+                    <i class="fa-solid fa-heart-pulse heart-icon"></i>
+                    <div class="family-avatars">
+                        <i class="fa-solid fa-user-large adult"></i>
+                        <i class="fa-solid fa-user child"></i>
+                        <i class="fa-solid fa-user-large adult"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-main-title">Nuestros valores</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Confianza</h3>
+                <p>Protegemos tu información y te brindamos datos confiables</p>
+            </div>
+            <div class="value-card">
+                <i class="fa-solid fa-circle-notch"></i>
+                <h3>Eficiencia</h3>
+                <p>Optimizamos procesos para que ahorres tiempo y esfuerzo</p>
+            </div>
+            <div class="value-card">
+                <i class="fa-solid fa-wheelchair"></i>
+                <h3>Inclusión</h3>
+                <p>Diseñamos para todas las personas, sin excepciones</p>
+            </div>
+            <div class="value-card">
+                <i class="fa-regular fa-lightbulb"></i>
+                <h3>Innovación</h3>
+                <p>Mejoramos cada día para ofrecerte la mejor experiencia</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="view-reseñas" class="page-section">
+        <h2 class="title-left-blue">Reseñas</h2>
+        <div class="reviews-split-container">
+            <div class="left-rating-box">
+                <div class="huge-number">4.8</div>
+                <div class="stars-row">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="sub-text">Basado en 1,248 reseñas</p>
+            </div>
+            <div class="right-bars-box">
+                <div class="progress-row"><span>5 estrellas</span><div class="bar-line"><div class="fill" style="width: 84%;"></div></div><span>84%</span></div>
+                <div class="progress-row"><span>4 estrellas</span><div class="bar-line"><div class="fill" style="width: 12%;"></div></div><span>12%</span></div>
+                <div class="progress-row"><span>3 estrellas</span><div class="bar-line"><div class="fill" style="width: 3%;"></div></div><span>3%</span></div>
+                <div class="progress-row"><span>2 estrellas</span><div class="bar-line"><div class="fill" style="width: 1%;"></div></div><span>1%</span></div>
+                <div class="progress-row"><span>1 estrella</span><div class="bar-line"><div class="fill" style="width: 0%;"></div></div><span>0%</span></div>
+            </div>
+        </div>
+
+        <div class="cards-reviews-layout">
+            <div class="user-review-card">
+                <div class="card-user-info">
+                    <div class="avatar-circle"><i class="fa-regular fa-user"></i></div>
+                    <div>
+                        <h4>María Gómez</h4>
+                        <div class="stars-row small"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    </div>
+                    <span class="time-ago">Hace 2 días</span>
+                </div>
+                <p>Me ha ayudado muchísimo a evitar largas colas. La información en tiempo real es muy precisa.</p>
+            </div>
+            <div class="user-review-card">
+                <div class="card-user-info">
+                    <div class="avatar-circle"><i class="fa-regular fa-user"></i></div>
+                    <div>
+                        <h4>Carlos Rojas</h4>
+                        <div class="stars-row small"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    </div>
+                    <span class="time-ago">Hace 1 semana</span>
+                </div>
+                <p>Excelente aplicación, fácil de usar y muy útil para organizar el tiempo.</p>
+            </div>
+            <div class="user-review-card">
+                <div class="card-user-info">
+                    <div class="avatar-circle"><i class="fa-regular fa-user"></i></div>
+                    <div>
+                        <h4>Ana Lucía Pérez</h4>
+                        <div class="stars-row small"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    </div>
+                    <span class="time-ago">Hace 2 semanas</span>
+                </div>
+                <p>La opción de alertas y recomendaciones es lo mejor. Ahora siempre elijo los mejores horarios.</p>
+            </div>
+            <div class="user-review-card">
+                <div class="card-user-info">
+                    <div class="avatar-circle"><i class="fa-regular fa-user"></i></div>
+                    <div>
+                        <h4>Jorge Martínez</h4>
+                        <div class="stars-row small"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    </div>
+                    <span class="time-ago">Hace 3 semanas</span>
+                </div>
+                <p>Interfaz amigable y moderna. Se nota que está diseñada pensando en las personas.</p>
+            </div>
+        </div>
+        <div class="center-btn-container"><button class="btn btn-outline-blue">Ver más reseñas</button></div>
+    </section>
+
+    <section id="view-contacto" class="page-section">
+        <div class="form-two-columns">
+            <div class="column-details">
+                <h2 class="title-left-blue">Contáctanos</h2>
+                <p class="subtitle-form">Estamos para ayudarte. Envíanos tus dudas, sugerencias o cualquier consulta.</p>
+                <div class="contact-bullets">
+                    <div class="bullet-row"><i class="fa-regular fa-envelope"></i> <div><strong>Correo electrónico</strong><br>hola@optiturn.com</div></div>
+                    <div class="bullet-row"><i class="fa-solid fa-phone"></i> <div><strong>Teléfono</strong><br>+51 967 654 321</div></div>
+                    <div class="bullet-row"><i class="fa-regular fa-clock"></i> <div><strong>Horario de atención</strong><br>Lunes a viernes de 8:00 am a 6:00 p.m</div></div>
+                    <div class="bullet-row"><i class="fa-solid fa-location-dot"></i> <div><strong>Dirección</strong><br>Av. Los Innovadores 123, San Isidro, Lima, Perú</div></div>
+                </div>
+            </div>
+            <div class="column-form-box">
+                <form onsubmit="event.preventDefault(); alert('Mensaje enviado');">
+                    <div class="input-item"><label>Nombre completo</label><input type="text" placeholder="Escribe tu nombre completo" required></div>
+                    <div class="input-item"><label>Correo electrónico</label><input type="email" placeholder="ejemplo@correo.com" required></div>
+                    <div class="input-item"><label>Asunto</label><input type="text" placeholder="Escribe su asunto" required></div>
+                    <div class="input-item"><label>Mensaje</label><textarea rows="4" placeholder="Escribe tu mensaje aquí" required></textarea></div>
+                    <button type="submit" class="btn btn-submit-full">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="view-registro" class="page-section">
+        <div class="form-two-columns alternative-layout">
+            <div class="column-form-box">
+                <h2 class="title-left-blue">Regístrate</h2>
+                <p class="subtitle-form">Crea tu cuenta y comienza a optimizar tu tiempo</p>
+                <form onsubmit="event.preventDefault(); alert('Registro completo');">
+                    <div class="input-item"><label>Nombre completo</label><input type="text" placeholder="Escribe tu nombre completo" required></div>
+                    <div class="input-item"><label>Correo electrónico</label><input type="email" placeholder="ejemplo@correo.com" required></div>
+                    <div class="input-item"><label>Contraseña</label><div class="pass-wrapper"><input type="password" placeholder="Crea una contraseña" required><i class="fa-regular fa-eye-slash"></i></div></div>
+                    <div class="checkbox-row"><input type="checkbox" required> <span>Acepto los Términos y condiciones y la <a href="#">Política de Privacidad</a></span></div>
+                    <button type="submit" class="btn btn-submit-full">Registrarme</button>
+                    <p class="bottom-form-text">¿Ya tienes una cuenta? <a onclick="navigateTo('login')">Iniciar sesión</a></p>
+                </form>
+            </div>
+            <div class="column-graphics">
+                <div class="illustration-phone-svg"><i class="fa-solid fa-mobile-screen-button"></i><div class="check-badge"><i class="fa-solid fa-check"></i></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="view-login" class="page-section">
+        <div class="form-two-columns alternative-layout">
+            <div class="column-form-box">
+                <h2 class="title-left-blue">Iniciar sesión</h2>
+                <p class="subtitle-form">Bienvenido de nuevo a OptiTurn</p>
+                <form onsubmit="event.preventDefault(); alert('Sesión abierta');">
+                    <div class="input-item"><label>Correo electrónico</label><input type="email" placeholder="ejemplo@correo.com" required></div>
+                    <div class="input-item"><label>Contraseña</label><input type="password" placeholder="Ingresa tu contraseña" required></div>
+                    <div class="forgot-link-container"><a href="#">¿Olvidaste tu contraseña?</a></div>
+                    <button type="submit" class="btn btn-submit-full">Iniciar sesión</button>
+                    <p class="bottom-form-text">¿Aún no tienes cuenta? <a onclick="navigateTo('registro')">Regístrate</a></p>
+                </form>
+            </div>
+            <div class="column-graphics">
+                <div class="illustration-lock-svg"><i class="fa-solid fa-lock"></i><div class="dots-pattern">......</div></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="download-banner">
+            <div class="banner-logo-txt">
+                <div class="footer-logo-box">
+    <img src="logo_optiturn.png" alt="OptiTurn Logo" class="footer-logo-img">
+</div>
+                <div>
+                    <h3>Comienza a optimizar tu tiempo hoy mismo</h3>
+                    <p>Únete a miles de personas que ya están ahorrando tiempo con OptiTurn</p>
+                </div>
+            </div>
+            <div class="download-buttons">
+                <a href="#" class="btn-store">
+                    <i class="fa-brands fa-google-play"></i>
+                    <div><span>Disponible en</span><strong>Google Play</strong></div>
                 </a>
-                <a href="#" class="bg-gray-900 text-white flex items-center gap-3 px-5 py-2.5 rounded-xl hover:bg-gray-800 transition shadow-sm w-44">
-                    <i data-lucide="apple" class="w-6 h-6 fill-white"></i>
-                    <div class="text-left">
-                        <p class="text-[10px] uppercase text-gray-400 font-medium tracking-wider">Descárgalo en el</p>
-                        <p class="text-sm font-semibold -mt-1">App Store</p>
-                    </div>
+                <a href="#" class="btn-store">
+                    <i class="fa-brands fa-apple"></i>
+                    <div><span>Descárgalo en el</span><strong>App Store</strong></div>
                 </a>
             </div>
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
