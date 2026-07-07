@@ -1,0 +1,74 @@
+.register-page{
+
+    width:100%;
+    min-height:100%;
+    background:white;
+
+    padding:45px 25px 20px;
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.register-page .logo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin-top:15px;
+
+    margin-bottom:25px;
+
+}
+
+.register-page .logo-img{
+
+    width:110px;
+
+    margin-bottom:15px;
+
+}
+
+.register-page .logo h1{
+
+    color:#2563EB;
+
+    font-size:30px;
+
+}
+
+.register-page .logo p{
+
+    color:#777;
+
+    margin-top:5px;
+
+}
+
+.register-page .form{
+
+    margin-top:15px;
+
+}
+
+.register{
+
+    text-align:center;
+
+    margin-top:20px;
+
+}
+
+.register a{
+
+    color:#2563EB;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+}

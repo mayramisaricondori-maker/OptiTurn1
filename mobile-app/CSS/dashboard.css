@@ -1,0 +1,193 @@
+.dashboard{
+
+    height:100%;
+    background:#F5F7FB;
+    padding:55px 20px 20px;
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.header h2{
+
+    color:#2563EB;
+    font-size:28px;
+
+}
+
+.header p{
+
+    color:#666;
+    margin-top:5px;
+
+}
+
+.profile{
+
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+
+}
+
+.search-box{
+
+    margin-top:25px;
+    background:white;
+    border-radius:15px;
+    padding:14px 18px;
+
+    display:flex;
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+
+}
+
+.search-box input{
+
+    border:none;
+    outline:none;
+    margin-left:10px;
+    flex:1;
+
+}
+
+.quick{
+
+    margin-top:25px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:12px;
+
+}
+
+.quick-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    height:95px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+
+    cursor:pointer;
+
+}
+
+.quick-card i{
+
+    font-size:24px;
+
+    color:#2563EB;
+
+    margin-bottom:10px;
+
+}
+
+.appointment{
+
+    margin-top:25px;
+
+}
+
+.appointment h4{
+
+    margin:10px 0;
+
+    color:#2563EB;
+
+}
+
+.section-title{
+
+    margin-top:25px;
+    margin-bottom:15px;
+
+}
+
+.institutions{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+
+}
+
+.inst-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+
+}
+
+.inst-card i{
+
+    font-size:32px;
+
+    color:#2563EB;
+
+    margin-bottom:12px;
+
+}
+
+.bottom-nav{
+
+    margin-top:auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:15px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+.bottom-nav i{
+
+    font-size:22px;
+
+    color:#888;
+
+}
+
+.bottom-nav .active{
+
+    color:#2563EB;
+
+}

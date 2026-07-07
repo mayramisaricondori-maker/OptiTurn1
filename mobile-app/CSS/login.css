@@ -1,0 +1,219 @@
+.login-page{
+    width:100%;
+    height:100%;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    padding:25px 22px 20px;
+
+}
+
+.back{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-size:22px;
+}
+
+.logo{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:5px;
+    margin-bottom:15px;
+}
+
+.logo img{
+    width:70px;
+    margin-bottom:8px;
+}
+
+.logo h1{
+    margin-top:15px;
+    color:#1E66F5;
+    font-size:22px;
+}
+
+.logo p{
+    margin-top:2px;
+    margin-bottom: 8px;
+    color:#777;
+}
+
+.form{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+}
+
+.form label{
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.input-box{
+    position:relative;
+    margin-bottom:20px;
+}
+
+.input-box input{
+
+height:55px;
+
+background:#fafafa;
+
+border:1px solid #e4e4e4;
+
+border-radius:15px;
+
+padding-left:45px;
+
+font-size:15px;
+
+}
+
+.icon{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.eye{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+}
+
+.forgot{
+    text-align:right;
+    color:#1E66F5;
+    text-decoration:none;
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+.login-btn{
+
+width:100%;
+
+height:55px;
+
+background:#2563EB;
+
+border:none;
+
+border-radius:15px;
+
+color:white;
+
+font-size:17px;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.login-btn:hover{
+
+transform:scale(.98);
+
+}
+
+.or{
+    margin:18px 0;
+    text-align:center;
+    color:#888;
+}
+
+.social{
+    display:flex;
+    gap:12px;
+    margin-bottom: 20px;
+}
+
+.social button{
+    flex:1;
+    height:50px;
+    border-radius:14px;
+    border:1px solid #ddd;
+    background:#fff;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.register{
+    margin-top:10px;
+    text-align:center;
+    padding-bottom:10px;
+}
+
+.register a{
+    color:#1E66F5;
+    text-decoration:none;
+    font-weight:bold;
+}
+.google{
+
+    color:#444;
+
+}
+
+.apple{
+
+    color:black;
+
+}
+
+.social button i{
+
+    margin-right:8px;
+
+}
+
+.icon{
+
+    color:#8b8b8b;
+
+}
+
+.eye{
+
+    color:#8b8b8b;
+
+}
+.logo-img{
+
+    width:120px;
+
+    margin-bottom:15px;
+
+}
+.register{
+
+    text-align:center;
+
+    margin-top:15px;
+
+    font-size:15px;
+
+}
+
+.register a{
+
+    color:#2563EB;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
