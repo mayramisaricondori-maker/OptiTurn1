@@ -1,69 +1,91 @@
-<div class="register-page">
+<div class="signup-page">
 
-    <div class="back" onclick="cargarVista('login.html')">
-        <i class="fa-solid fa-arrow-left"></i>
-    </div>
 
-    <div class="logo">
+    <div class="signup-header">
 
-        <img class="logo-img" src="../assets/logo/logo.png" alt="OptiTurn">
+        <div class="signup-back" onclick="cargarVista('login.html')">
 
-        <h1>Crear Cuenta</h1>
+            <i class="fa-solid fa-arrow-left"></i>
 
-        <p>Completa tus datos para comenzar</p>
-
-    </div>
-
-    <div class="form">
-
-        <label>Nombre completo</label>
-
-        <div class="input-box">
-            <i class="fa-solid fa-user icon"></i>
-            <input type="text" placeholder="Ingrese su nombre">
         </div>
+
+
+        <h1>
+            Crear cuenta
+        </h1>
+
+    </div>
+
+
+
+    <div class="signup-card">
+
+
+        <label>Nombres</label>
+
+        <input type="text" placeholder="Ingrese sus nombres">
+
+
+        <label>Apellidos</label>
+
+        <input type="text" placeholder="Ingrese sus apellidos">
+
 
         <label>Correo electrónico</label>
 
-        <div class="input-box">
-            <i class="fa-solid fa-envelope icon"></i>
-            <input type="email" placeholder="ejemplo@gmail.com">
-        </div>
+        <input type="email" placeholder="ejemplo@gmail.com">
+
+
+        <label>Teléfono</label>
+
+        <input type="text" placeholder="999999999">
+
 
         <label>Contraseña</label>
 
-        <div class="input-box">
-            <i class="fa-solid fa-lock icon"></i>
-            <input id="pass1" type="password" placeholder="********">
-            <i id="eye1" class="fa-solid fa-eye eye"></i>
+        <div class="signup-password">
+
+            <input type="password" placeholder="********">
+
+            <i class="fa-solid fa-eye"></i>
+
         </div>
+
 
         <label>Confirmar contraseña</label>
 
-        <div class="input-box">
-            <i class="fa-solid fa-lock icon"></i>
-            <input id="pass2" type="password" placeholder="********">
-            <i id="eye2" class="fa-solid fa-eye eye"></i>
+        <div class="signup-password">
+
+            <input type="password" placeholder="********">
+
+            <i class="fa-solid fa-eye"></i>
+
         </div>
 
-        <button class="btn-primary">
 
-            Crear Cuenta
+
+        <div class="signup-terms">
+
+            <input type="checkbox">
+
+            <span>
+                Acepto los Términos y condiciones y la
+                <a>Política de Privacidad</a>
+            </span>
+
+        </div>
+
+
+
+        <button 
+        class="signup-btn"
+        onclick="cargarVista('success.html')">
+
+        Registrarse
 
         </button>
 
     </div>
 
-    <div class="register">
-
-        ¿Ya tienes una cuenta?
-
-        <a href="#" onclick="cargarVista('login.html')">
-
-            Iniciar sesión
-
-        </a>
-
-    </div>
 
 </div>

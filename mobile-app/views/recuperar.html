@@ -1,56 +1,57 @@
-<div class="login-page">
+<div class="recover-page">
 
-<div class="back"
-onclick="cargarVista('login.html')">
 
-←
+    <div class="recover-back" onclick="cargarVista('login.html')">
 
-</div>
+        <i class="fa-solid fa-arrow-left"></i>
 
-<div class="logo">
+    </div>
 
-<h1>Recuperar contraseña</h1>
 
-<p>
+    <h1>
+        Recuperar contraseña
+    </h1>
 
-Ingresa tu correo
 
-</p>
+    <p>
+        Ingresa tu correo electrónico y te
+        <br>
+        enviaremos un enlace
+    </p>
 
-</div>
 
-<div class="form">
 
-<label>
+    <div class="recover-form">
 
-Correo electrónico
 
-</label>
+        <label>
+            Correo electrónico
+        </label>
 
-<div class="input-box">
 
-<span class="icon">
+        <input 
+        type="email"
+        placeholder="ejemplo@gmail.com">
 
-📧
 
-</span>
 
-<input
-type="email"
-placeholder="ejemplo@gmail.com">
+        <button 
+        onclick="cargarVista('correo.html')">
 
-</div>
+            Enviar instrucciones
 
-<button
+        </button>
 
-class="btn-primary"
 
-onclick="cargarVista('correo.html')">
 
-Enviar instrucciones
+        <a onclick="cargarVista('login.html')">
 
-</button>
+            Volver al inicio de sesión
 
-</div>
+        </a>
+
+
+    </div>
+
 
 </div>

@@ -1,6 +1,6 @@
 .login-page{
     width:100%;
-    height:100%;
+    min-height:100%;
     background:#fff;
     display:flex;
     flex-direction:column;
@@ -29,8 +29,13 @@
 }
 
 .logo img{
-    width:70px;
-    margin-bottom:8px;
+    width:60px;
+
+    height:60px;
+
+    object-fit:cover;
+
+    margin-bottom:15px;
 }
 
 .logo h1{
@@ -70,7 +75,7 @@ background:#fafafa;
 
 border:1px solid #e4e4e4;
 
-border-radius:15px;
+border-radius:7px;
 
 padding-left:45px;
 
@@ -105,13 +110,13 @@ font-size:15px;
 
 width:100%;
 
-height:55px;
+height:45px;
 
 background:#2563EB;
 
 border:none;
 
-border-radius:15px;
+border-radius:7px;
 
 color:white;
 
@@ -143,7 +148,8 @@ transform:scale(.98);
 
 .social button{
     flex:1;
-    height:50px;
+    height:38px;
+    font-size: 11px;
     border-radius:14px;
     border:1px solid #ddd;
     background:#fff;
@@ -152,15 +158,19 @@ transform:scale(.98);
 }
 
 .register{
-    margin-top:10px;
+
+    display:block;
     text-align:center;
-    padding-bottom:10px;
+    margin-top:1px;
+    font-size:12px;
+    color:#777;
+
 }
 
 .register a{
     color:#1E66F5;
     text-decoration:none;
-    font-weight:bold;
+    font-weight:600;
 }
 .google{
 
@@ -171,12 +181,6 @@ transform:scale(.98);
 .apple{
 
     color:black;
-
-}
-
-.social button i{
-
-    margin-right:8px;
 
 }
 
@@ -191,29 +195,4 @@ transform:scale(.98);
     color:#8b8b8b;
 
 }
-.logo-img{
 
-    width:120px;
-
-    margin-bottom:15px;
-
-}
-.register{
-
-    text-align:center;
-
-    margin-top:15px;
-
-    font-size:15px;
-
-}
-
-.register a{
-
-    color:#2563EB;
-
-    text-decoration:none;
-
-    font-weight:600;
-
-}
