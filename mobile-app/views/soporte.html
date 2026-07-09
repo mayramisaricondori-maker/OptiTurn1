@@ -1,0 +1,80 @@
+<div class="soporte-screen">
+
+    <header class="soporte-header">
+        <button class="back-btn" onclick="cargarVista('notificaciones.html')">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div>
+            <h2>Soporte</h2>
+            <p>Cuéntanos qué problema tienes con tu turno</p>
+        </div>
+    </header>
+
+    <section class="soporte-card">
+
+        <div class="soporte-icon">
+            <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <h3>¿Necesitas ayuda?</h3>
+        <p>Selecciona el motivo de tu consulta y deja un mensaje breve.</p>
+
+        <label for="tipoConsulta">Motivo</label>
+        <select id="tipoConsulta">
+            <option value="">Selecciona una opción</option>
+            <option value="No puedo ver mi turno">No puedo ver mi turno</option>
+            <option value="No recibí notificación">No recibí notificación</option>
+            <option value="Quiero cancelar mi reserva">Quiero cancelar mi reserva</option>
+            <option value="Tengo problemas con el QR">Tengo problemas con el QR</option>
+            <option value="Otro problema">Otro problema</option>
+        </select>
+
+        <label for="mensajeSoporte">Mensaje</label>
+        <textarea id="mensajeSoporte" placeholder="Describe brevemente tu consulta..."></textarea>
+
+        <button class="btn-soporte" onclick="enviarSoporte()">
+            Enviar solicitud
+        </button>
+
+        <p class="mensaje-soporte" id="mensajeSoporteOk"></p>
+
+    </section>
+
+    <section class="faq-card">
+    <h3>Preguntas frecuentes</h3>
+
+    <div class="faq-item" onclick="mostrarRespuesta('respuesta1')">
+        <i class="fa-solid fa-circle-question"></i>
+        <p>¿Puedo confirmar mi asistencia desde la app?</p>
+        <i class="fa-solid fa-chevron-down faq-arrow"></i>
+    </div>
+    <div class="faq-answer" id="respuesta1">
+        Sí. Desde la pantalla de notificaciones puedes confirmar tu asistencia antes de acudir al establecimiento.
+    </div>
+
+    <div class="faq-item" onclick="mostrarRespuesta('respuesta2')">
+        <i class="fa-solid fa-circle-question"></i>
+        <p>¿Qué pasa si llego tarde a mi turno?</p>
+        <i class="fa-solid fa-chevron-down faq-arrow"></i>
+    </div>
+    <div class="faq-answer" id="respuesta2">
+        Si llegas tarde, tu turno podría perder prioridad. Por eso se recomienda llegar unos minutos antes de la hora programada.
+    </div>
+
+    <div class="faq-item" onclick="mostrarRespuesta('respuesta3')">
+        <i class="fa-solid fa-circle-question"></i>
+        <p>¿Dónde veo el estado de mi reserva?</p>
+        <i class="fa-solid fa-chevron-down faq-arrow"></i>
+    </div>
+    <div class="faq-answer" id="respuesta3">
+        Puedes revisar el estado desde la pantalla de notificaciones o desde el detalle de tu próximo turno.
+    </div>
+    </section>
+
+    <button class="support-link" onclick="cargarVista('dashboard.html')">
+        <i class="fa-solid fa-house"></i>
+        Volver al inicio
+    </button>
+
+</div>

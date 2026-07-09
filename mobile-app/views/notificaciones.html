@@ -1,0 +1,96 @@
+<div class="notificaciones-screen">
+
+    <header class="noti-header">
+        <button class="back-btn" onclick="cargarVista('dashboard.html')">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div>
+            <h2>Notificaciones</h2>
+            <p>Recordatorios y alertas de tu turno</p>
+        </div>
+    </header>
+
+    <section class="turno-card">
+        <div class="turno-top">
+            <div class="turno-icon">
+                <i class="fa-solid fa-ticket"></i>
+            </div>
+
+            <div>
+                <h3>Tu turno está próximo</h3>
+                <p id="estadoTurno">Pendiente de confirmación</p>
+            </div>
+        </div>
+
+        <div class="turno-info">
+            <div>
+                <span>Institución</span>
+                <strong id="notiInstitucion">RENIEC</strong>
+            </div>
+
+            <div>
+                <span>Servicio</span>
+                <strong id="notiServicio">Duplicado de DNI</strong>
+            </div>
+
+            <div>
+                <span>Horario</span>
+                <strong id="notiHorario">09:30 AM</strong>
+            </div>
+
+            <div>
+                <span>Tiempo estimado</span>
+                <strong id="notiTiempo">35 min</strong>
+            </div>
+        </div>
+
+        <button class="btn-primary full" id="btnConfirmarAsistencia" onclick="confirmarAsistencia()">
+            Confirmar asistencia
+        </button>
+
+        <button class="btn-cancelar full oculto" id="btnCancelarAsistencia" onclick="cancelarAsistencia()">
+            Cancelar confirmación
+        </button>
+
+        <button class="btn-secondary full" onclick="cargarVista('calificacion.html')">
+            Calificar experiencia
+        </button>
+    </section>
+
+    <section class="alertas-lista">
+
+        <h3>Alertas recientes</h3>
+
+        <div class="alerta-card">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+                <h4>Recordatorio de turno</h4>
+                <p>Tu atención está programada para las 09:30 AM.</p>
+            </div>
+        </div>
+
+        <div class="alerta-card">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <div>
+                <h4>Congestión moderada</h4>
+                <p>Actualmente hay 12 personas delante de ti.</p>
+            </div>
+        </div>
+
+        <div class="alerta-card">
+            <i class="fa-solid fa-circle-info"></i>
+            <div>
+                <h4>Recomendación</h4>
+                <p>Llega 10 minutos antes para evitar perder tu turno.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <button class="support-link" onclick="cargarVista('soporte.html')">
+        <i class="fa-solid fa-headset"></i>
+        Necesito ayuda con mi turno
+    </button>
+
+</div>
