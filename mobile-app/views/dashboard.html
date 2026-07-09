@@ -37,7 +37,7 @@
 <section class="welcome">
 
 <h2>
-¡Hola, Alexander! 👋
+¡Hola! 👋
 </h2>
 
 
@@ -57,7 +57,8 @@ Evita filas y conoce tu tiempo de espera antes de ir.
 
 <!-- BUSCADOR -->
 
-<div class="search-container">
+<div class="search-container"
+ onclick="cargarVista('establecimientos.html')">
 
 
 <i class="fa-solid fa-magnifying-glass"></i>
@@ -69,7 +70,7 @@ placeholder="Buscar servicio o establecimiento"
 >
 
 
-<button onclick="loadPage('views/busqueda.html')">
+<button onclick="cargarVista('busqueda.html')">
 
 <i class="fa-solid fa-chevron-right"></i>
 
@@ -92,7 +93,7 @@ placeholder="Buscar servicio o establecimiento"
 
 
 <div class="action blue"
-onclick="loadPage('views/reservas.html')">
+onclick="cargarVista('reservas.html')">
 
 
 <i class="fa-solid fa-calendar-check"></i>
@@ -115,7 +116,7 @@ Elige servicio y asegura tu atención
 
 
 <div class="action green"
-onclick="loadPage('views/reservas.html')">
+onclick="cargarVista('reservas.html')">
 
 
 <i class="fa-solid fa-ticket"></i>
@@ -247,7 +248,7 @@ Horario
 
 
 
-<button onclick="loadPage('views/qr.html')">
+<button onclick="cargarVista('qr.html')">
 
 <i class="fa-solid fa-qrcode"></i>
 
@@ -270,7 +271,7 @@ Ver código QR
 
 
 <section class="status-card"
-onclick="loadPage('views/gestion.html')">
+onclick="cargarVista('gestion.html')">
 
 
 <h5>
@@ -355,7 +356,7 @@ Mejor horario
 
 
 <div class="active"
-onclick="loadPage('views/dashboard.html')">
+onclick="cargarVista('dashboard.html')">
 
 
 <i class="fa-solid fa-house"></i>
@@ -371,7 +372,7 @@ Inicio
 
 
 
-<div onclick="loadPage('views/reservas.html')">
+<div onclick="cargarVista('reservas.html')">
 
 
 <i class="fa-solid fa-calendar-days"></i>
@@ -388,7 +389,7 @@ Reservas
 
 
 
-<div onclick="loadPage('views/perfil.html')">
+<div onclick="cargarVista('perfil.html')">
 
 
 <i class="fa-solid fa-user"></i>

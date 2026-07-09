@@ -1,0 +1,439 @@
+/* ==========================
+   CONTENEDOR
+========================== */
+
+.servicios{
+
+    height:100%;
+    background:#F5F7FB;
+
+    padding:18px;
+
+    display:flex;
+    flex-direction:column;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+
+.header-servicios{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    margin-bottom:18px;
+
+}
+
+.btn-back{
+
+    position:absolute;
+
+    left:0;
+
+    border:none;
+    background:none;
+
+    font-size:24px;
+
+    color:#333;
+
+    cursor:pointer;
+
+}
+
+.header-servicios h2{
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================
+   BUSCADOR
+========================== */
+
+.search-box{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:14px 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+
+}
+
+.search-box i{
+
+    color:#999;
+
+}
+
+.search-box input{
+
+    flex:1;
+
+    margin-left:10px;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+}
+
+
+/* ==========================
+   TITULOS
+========================== */
+
+.titulo{
+
+    margin:20px 0 15px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================
+   RESULTADOS
+========================== */
+
+#listaSedes{
+
+    flex:1;
+
+    overflow-y:auto;
+
+}
+
+
+/* ==========================
+   TARJETA RESULTADO
+========================== */
+
+.sede-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:14px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:14px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.sede-card:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.info{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:12px;
+
+    object-fit:contain;
+
+    margin-right:14px;
+
+    background:#F4F4F4;
+
+    padding:5px;
+
+}
+
+.info h4{
+
+    margin-bottom:6px;
+
+}
+
+.info p{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+.sede-card i{
+
+    font-size:22px;
+
+    color:#666;
+
+}
+
+
+/* ==========================
+   DETALLE
+========================== */
+
+.card-establecimiento{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+
+}
+
+.logo-establecimiento{
+
+    width:70px;
+
+    height:70px;
+
+    object-fit:contain;
+
+    margin-right:15px;
+
+}
+
+.card-establecimiento h3{
+
+    margin-bottom:5px;
+
+}
+
+.card-establecimiento p{
+
+    color:#666;
+
+    margin-bottom:6px;
+
+}
+
+.card-establecimiento span{
+
+    color:#2563EB;
+
+    font-size:14px;
+
+}
+
+
+/* ==========================
+   HORARIO
+========================== */
+
+.horario{
+
+    margin-top:10px;
+
+}
+
+.horario-item{
+
+    display:flex;
+
+    margin-bottom:18px;
+
+    align-items:flex-start;
+
+}
+
+.horario-item i{
+
+    font-size:30px;
+
+    margin-right:15px;
+
+    color:#333;
+
+}
+
+.horario-item strong{
+
+    display:block;
+
+    margin-bottom:4px;
+
+}
+
+.horario-item p{
+
+    color:#718096;
+
+}
+
+
+/* ==========================
+   SERVICIOS
+========================== */
+
+.lista-servicios{
+
+    margin-top:10px;
+
+}
+
+.servicio-item{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+}
+
+.servicio-item i{
+
+    color:#21A366;
+
+    font-size:28px;
+
+    margin-right:12px;
+
+}
+
+.servicio-item span{
+
+    font-size:16px;
+
+}
+
+
+/* ==========================
+   BOTON
+========================== */
+
+.btn-primary{
+
+    margin-top:auto;
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#2563EB;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.btn-primary:hover{
+
+    background:#1D4ED8;
+
+}
+
+
+/* ==========================
+   BARRA INFERIOR
+========================== */
+
+.bottom-nav{
+
+    margin-top:18px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:15px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+.bottom-nav i{
+
+    font-size:22px;
+
+    color:#888;
+
+}
+
+.bottom-nav .active{
+
+    color:#2563EB;
+
+}
+
+
+/* ==========================
+   SCROLL
+========================== */
+
+#listaSedes::-webkit-scrollbar{
+
+    width:5px;
+
+}
+
+#listaSedes::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:20px;
+
+}

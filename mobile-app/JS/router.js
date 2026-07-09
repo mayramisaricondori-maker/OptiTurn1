@@ -1,6 +1,7 @@
 const app = document.getElementById("app");
 
 
+
 async function cargarVista(vista){
 
     try{
@@ -21,8 +22,15 @@ async function cargarVista(vista){
         app.innerHTML = html;
 
 
-        // ejecutar scripts de la vista actual
+
+        // cargar CSS y JS de la vista actual
+        cargarRecursosVista(vista);
+
+
+
+        // activar botones de la vista actual
         activarFuncionesVista();
+
 
 
     }catch(error){
@@ -39,68 +47,197 @@ async function cargarVista(vista){
 
 
 
+
+
+
+function cargarRecursosVista(vista){
+
+
+    const nombreVista = vista.replace(".html","");
+
+
+
+    // =====================
+    // CARGAR CSS
+    // =====================
+
+
+    const cssExistente = document.getElementById(
+        `css-${nombreVista}`
+    );
+
+
+    if(!cssExistente){
+
+
+        const link = document.createElement("link");
+
+
+        link.id = `css-${nombreVista}`;
+
+        link.rel = "stylesheet";
+
+        link.href = `CSS/${nombreVista}.css`;
+
+
+        document.head.appendChild(link);
+
+
+    }
+
+
+
+
+
+    // =====================
+    // CARGAR JS
+    // =====================
+
+
+    const scriptExistente = document.getElementById(
+        `js-${nombreVista}`
+    );
+
+
+
+    if(!scriptExistente){
+
+
+        const script = document.createElement("script");
+
+
+        script.id = `js-${nombreVista}`;
+
+        script.src = `JS/${nombreVista}.js`;
+
+        script.defer = true;
+
+
+        document.body.appendChild(script);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
 function activarFuncionesVista(){
 
 
-    // Botón comenzar del splash
+
+    // =====================
+    // BOTÓN COMENZAR
+    // =====================
+
 
     const btnComenzar = document.querySelector(".btn-start");
 
 
+
     if(btnComenzar){
 
-        btnComenzar.addEventListener("click",()=>{
+
+        btnComenzar.onclick = () => {
+
 
             cargarVista("login.html");
 
-        });
+
+        };
+
 
     }
 
 
 
-    // Botón ir a registro
+
+
+
+
+    // =====================
+    // BOTÓN REGISTRO
+    // =====================
+
 
     const btnRegistro = document.querySelector(".btn-registro");
 
 
+
     if(btnRegistro){
 
-        btnRegistro.addEventListener("click",()=>{
+
+        btnRegistro.onclick = () => {
+
 
             cargarVista("registro.html");
 
-        });
-
-    }
-
-
-}
-
-
-
-// cargar pantalla inicial
-
-window.addEventListener("DOMContentLoaded",()=>{
-
-    cargarVista("index.html");
-
-});
-function activarFuncionesVista(){
-
-
-    const boton = document.getElementById("btnComenzar");
-
-
-    if(boton){
-
-        boton.onclick = () => {
-
-            cargarVista("login.html");
 
         };
 
+
     }
 
 
+
+
+
+
+
+
+    // =====================
+    // VOLVER DASHBOARD
+    // =====================
+
+
+    const btnVolverDashboard = document.getElementById(
+        "btnVolverDashboard"
+    );
+
+
+
+    if(btnVolverDashboard){
+
+
+        btnVolverDashboard.onclick = () => {
+
+
+            cargarVista("dashboard.html");
+
+
+        };
+
+
+    }
+
+
+
 }
+
+
+
+
+
+
+
+
+
+// =====================
+// CARGA INICIAL
+// =====================
+
+
+window.addEventListener("DOMContentLoaded",()=>{
+
+
+    cargarVista("index.html");
+
+
+});

@@ -1,0 +1,84 @@
+<div class="establecimientos">
+
+    <!-- Header -->
+    <header class="header-establecimientos">
+
+        <button class="btn-back" id="btnVolverDashboard">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <h2>Buscar establecimiento</h2>
+
+    </header>
+
+    <!-- Buscador -->
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="txtBuscar"
+            placeholder="Buscar servicio o establecimiento"
+        >
+
+    </div>
+
+    <!-- Categorías -->
+    <section class="categorias">
+
+        <h3>Categorías</h3>
+
+        <div class="categorias-grid">
+
+            <div class="categoria active" data-categoria="todos">
+                <i class="fa-solid fa-folder"></i>
+                <span>Todos</span>
+            </div>
+
+            <div class="categoria" data-categoria="salud">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>Salud</span>
+            </div>
+
+            <div class="categoria" data-categoria="tramites">
+                <i class="fa-regular fa-file-lines"></i>
+                <span>Trámites</span>
+            </div>
+
+            <div class="categoria" data-categoria="transporte">
+                <i class="fa-solid fa-bus"></i>
+                <span>Transporte</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Resultados -->
+    <section class="resultados">
+
+        <h3>Resultados</h3>
+
+        <div id="listaResultados">
+
+            <!-- El JS insertará las tarjetas aquí -->
+
+        </div>
+
+    </section>
+
+    <!-- Barra inferior -->
+    <nav class="bottom-nav">
+
+        <i class="fa-solid fa-house"></i>
+
+        <i class="fa-solid fa-border-all active"></i>
+
+        <i class="fa-solid fa-calendar-days"></i>
+
+        <i class="fa-solid fa-user"></i>
+
+    </nav>
+
+</div>
