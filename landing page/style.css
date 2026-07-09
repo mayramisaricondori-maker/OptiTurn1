@@ -833,7 +833,7 @@ header {
 }
 /* Estilos para el logo en la barra de navegación */
 .navbar-logo-img {
-    height: 45px;       /* Ajusta la altura para que no deforme el menú */
+    height: 85px;       /* Ajusta la altura para que no deforme el menú */
     width: auto;        /* Mantiene la proporción original del logo */
     display: block;
     cursor: pointer;
@@ -849,4 +849,49 @@ header {
 /* Ajuste opcional para centrar verticalmente el contenido del footer */
 .banner-logo-txt {
     align-items: center !important;
+}
+
+/* ===========================
+   SECCIÓN CÓMO FUNCIONA
+=========================== */
+
+#como-funciona{
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.steps-grid{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.step-card{
+    width: 240px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.step-card img{
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.step-card h3{
+    margin-bottom: 10px;
+}
+
+.step-card p{
+    font-size: 15px;
+    color: #666;
+}
+@media (max-width: 768px){
+
 }
