@@ -1,0 +1,93 @@
+<div class="app-screen reservas-screen">
+
+    <header class="app-header">
+        <button class="app-back-btn" onclick="cargarVista('dashboard.html')">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="app-header-title">
+            <h2>Reservar turno</h2>
+            <p>Elige un horario disponible</p>
+        </div>
+    </header>
+
+    <section class="app-card reserva-servicio">
+        <span>Servicio seleccionado</span>
+        <h3 id="reservaServicio">Duplicado de DNI</h3>
+        <p id="reservaEntidad">RENIEC</p>
+    </section>
+
+    <h3 class="section-title">Horarios disponibles</h3>
+
+    <section class="horarios-reserva">
+
+        <button class="horario-opcion active" onclick="seleccionarHorarioReserva(this, '09:30 AM')">
+            <strong>09:30 AM</strong>
+            <span>Disponible</span>
+        </button>
+
+        <button class="horario-opcion" onclick="seleccionarHorarioReserva(this, '10:30 AM')">
+            <strong>10:30 AM</strong>
+            <span>Disponible</span>
+        </button>
+
+        <button class="horario-opcion" onclick="seleccionarHorarioReserva(this, '02:00 PM')">
+            <strong>02:00 PM</strong>
+            <span>Recomendado</span>
+        </button>
+
+        <button class="horario-opcion" onclick="seleccionarHorarioReserva(this, '04:00 PM')">
+            <strong>04:00 PM</strong>
+            <span>Baja demanda</span>
+        </button>
+
+    </section>
+
+    <section class="app-card reserva-info">
+        <h3>Resumen</h3>
+
+        <div>
+            <span>Personas en fila</span>
+            <strong id="reservaPersonas">12</strong>
+        </div>
+
+        <div>
+            <span>Tiempo estimado</span>
+            <strong id="reservaTiempo">35 min</strong>
+        </div>
+
+        <div>
+            <span>Horario elegido</span>
+            <strong id="horarioElegido">09:30 AM</strong>
+        </div>
+    </section>
+
+    <button class="btn-primary" onclick="confirmarReserva()">
+        Confirmar reserva
+    </button>
+
+    <nav class="bottom-nav">
+
+        <div onclick="cargarVista('dashboard.html')">
+            <i class="fa-solid fa-house"></i>
+            <span>Inicio</span>
+        </div>
+
+        <div onclick="cargarVista('establecimientos.html')">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Buscar</span>
+        </div>
+
+        <div class="active" onclick="cargarVista('misTurnos.html')">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Reservas</span>
+        </div>
+
+        <div onclick="cargarVista('perfil.html')">
+            <i class="fa-solid fa-user"></i>
+            <span>Perfil</span>
+        </div>
+
+    </nav>
+
+</div>

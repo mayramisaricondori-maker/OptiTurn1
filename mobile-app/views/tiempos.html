@@ -1,0 +1,119 @@
+<div class="estadistica-screen">
+
+    <header class="app-header">
+        <button class="app-back-btn" onclick="cargarVista('congestion.html')">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="app-header-title">
+            <h2>Tiempos</h2>
+            <p>Consulta el tiempo estimado de espera</p>
+        </div>
+    </header>
+
+    <section class="app-card tiempo-resumen">
+
+        <div class="tiempo-icon">
+            <i class="fa-solid fa-clock"></i>
+        </div>
+
+        <div>
+            <span>Tiempo estimado actual</span>
+            <h3 id="tiempoActual">35 min</h3>
+            <p id="servicioTiempo">Duplicado de DNI - RENIEC</p>
+        </div>
+
+    </section>
+
+    <h3 class="section-title">Detalle de atención</h3>
+
+    <section class="tiempo-lista">
+
+        <div class="tiempo-item">
+            <div>
+                <i class="fa-solid fa-user-group"></i>
+            </div>
+
+            <article>
+                <h4>Personas en fila</h4>
+                <p id="personasTiempo">12 personas antes de ti</p>
+            </article>
+        </div>
+
+        <div class="tiempo-item">
+            <div>
+                <i class="fa-solid fa-hourglass-half"></i>
+            </div>
+
+            <article>
+                <h4>Promedio por atención</h4>
+                <p id="promedioTiempo">8 minutos por persona</p>
+            </article>
+        </div>
+
+        <div class="tiempo-item">
+            <div>
+                <i class="fa-solid fa-gauge-high"></i>
+            </div>
+
+            <article>
+                <h4>Capacidad usada</h4>
+                <p id="capacidadTiempo">65% de ocupación</p>
+            </article>
+        </div>
+
+    </section>
+
+    <h3 class="section-title">Horarios estimados</h3>
+
+    <section class="horarios-lista">
+
+        <div class="horario-card">
+            <span>Ahora</span>
+            <strong id="horarioActual">35 min</strong>
+            <p>Espera actual</p>
+        </div>
+
+        <div class="horario-card recomendado">
+            <span>2:00 p.m.</span>
+            <strong>15 min</strong>
+            <p>Mejor horario</p>
+        </div>
+
+        <div class="horario-card">
+            <span>4:00 p.m.</span>
+            <strong>18 min</strong>
+            <p>Baja demanda</p>
+        </div>
+
+    </section>
+
+    <button class="btn-primary" onclick="cargarVista('recomendaciones.html')">
+        Ver recomendación inteligente
+    </button>
+
+    <nav class="bottom-nav">
+
+        <div onclick="cargarVista('dashboard.html')">
+            <i class="fa-solid fa-house"></i>
+            <span>Inicio</span>
+        </div>
+
+        <div class="active" onclick="cargarVista('establecimientos.html')">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Buscar</span>
+        </div>
+
+        <div onclick="cargarVista('reservas.html')">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Reservas</span>
+        </div>
+
+        <div onclick="cargarVista('perfil.html')">
+            <i class="fa-solid fa-user"></i>
+            <span>Perfil</span>
+        </div>
+
+    </nav>
+
+</div>

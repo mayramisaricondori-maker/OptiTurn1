@@ -1,193 +1,89 @@
-<div class="servicios">
+<div class="servicios-screen">
 
-    <!-- ===================== -->
-    <!-- PANTALLA 1: RESULTADOS -->
-    <!-- ===================== -->
+    <header class="servicios-header">
+        <button class="app-back-btn" onclick="cargarVista('mapa.html')">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
 
-    <section id="vistaResultados">
+        <div class="servicios-title">
+            <h2>Servicios</h2>
+            <p>Elige el trámite que deseas realizar</p>
+        </div>
+    </header>
 
-        <!-- Header -->
-        <header class="header-servicios">
+    <section class="establecimiento-resumen">
 
-            <button class="btn-back" id="btnVolverMapa">
-                <i class="fa-solid fa-arrow-left"></i>
-            </button>
-
-            <h2>Mapa</h2>
-
-        </header>
-
-        <!-- Buscador -->
-        <div class="search-box">
-
-            <i class="fa-solid fa-magnifying-glass"></i>
-
-            <input
-                type="text"
-                id="txtBuscarSede"
-                placeholder="Buscar establecimiento"
-            >
-
+        <div class="establecimiento-icon">
+            <i id="servicioIcono" class="fa-solid fa-id-card"></i>
         </div>
 
-        <h3 class="titulo">Resultados</h3>
-
-        <!-- Aquí el JS cargará las sedes -->
-        <div id="listaSedes"></div>
+        <div>
+            <h3 id="servicioEstablecimiento">RENIEC</h3>
+            <p id="servicioDescripcion">Registro de identificación</p>
+            <span id="servicioDistancia">A 1.2 km</span>
+        </div>
 
     </section>
 
+    <div class="servicios-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="buscarServicio" placeholder="Buscar servicio o trámite">
+    </div>
 
-    <!-- ===================== -->
-    <!-- PANTALLA 2: DETALLE -->
-    <!-- ===================== -->
+    <h3 class="section-title">Servicios disponibles</h3>
 
-    <section id="vistaDetalle" style="display:none;">
+    <section class="lista-servicios" id="listaServicios"></section>
 
-        <header class="header-servicios">
+    <section class="servicio-seleccionado oculto" id="servicioSeleccionadoBox">
 
-            <button class="btn-back" id="btnRegresarResultados">
-                <i class="fa-solid fa-arrow-left"></i>
-            </button>
+        <div>
+            <span>Servicio seleccionado</span>
+            <h3 id="nombreServicioSeleccionado">Duplicado de DNI</h3>
+            <p id="detalleServicioSeleccionado">Atención disponible para el horario actual.</p>
+        </div>
 
-            <h2>Detalle del establecimiento</h2>
-
-        </header>
-
-        <!-- Tarjeta -->
-        <div class="card-establecimiento">
-
-            <img
-                src="../assets/logo/reniec.png"
-                class="logo-establecimiento"
-            >
+        <div class="servicio-metricas">
+            <div>
+                <i class="fa-solid fa-users"></i>
+                <strong id="personasServicio">12</strong>
+                <small>Personas</small>
+            </div>
 
             <div>
-
-                <h3 id="nombreSede">
-                    RENIEC SEDE PRINCIPAL
-                </h3>
-
-                <p>
-                    Registro de identificación
-                </p>
-
-                <span id="direccionSede">
-                    Av. Arequipa 1234, Lima
-                </span>
-
+                <i class="fa-solid fa-clock"></i>
+                <strong id="tiempoServicio">35 min</strong>
+                <small>Espera</small>
             </div>
-
         </div>
 
-
-        <!-- Horario -->
-
-        <h3 class="titulo">
-            Horario de atención
-        </h3>
-
-        <div class="horario">
-
-            <div class="horario-item">
-
-                <i class="fa-regular fa-clock"></i>
-
-                <div>
-
-                    <strong>Lunes a Viernes</strong>
-
-                    <p>08:00 a.m. - 05:00 p.m.</p>
-
-                </div>
-
-            </div>
-
-            <div class="horario-item">
-
-                <i class="fa-regular fa-clock"></i>
-
-                <div>
-
-                    <strong>Sábado</strong>
-
-                    <p>08:00 a.m. - 12:00 p.m.</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- Servicios -->
-
-        <h3 class="titulo">
-            Servicios disponibles
-        </h3>
-
-        <div class="lista-servicios">
-
-            <div class="servicio-item">
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                <span>DNI</span>
-
-            </div>
-
-            <div class="servicio-item">
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                <span>Duplicado de DNI</span>
-
-            </div>
-
-            <div class="servicio-item">
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                <span>Actualización de datos</span>
-
-            </div>
-
-            <div class="servicio-item">
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                <span>Rectificación de datos</span>
-
-            </div>
-
-        </div>
-
-
-        <!-- Botón -->
-
-        <button
-            class="btn-primary"
-            id="btnCongestion">
-
+        <button class="btn-primary" onclick="irACongestion()">
             Visualizar congestión
-
         </button>
 
     </section>
 
-
-    <!-- Barra inferior -->
-
     <nav class="bottom-nav">
 
+    <div onclick="cargarVista('dashboard.html')">
         <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
+    </div>
 
-        <i class="fa-solid fa-border-all active"></i>
+    <div class="active" onclick="cargarVista('establecimientos.html')">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Buscar</span>
+    </div>
 
+    <div onclick="cargarVista('reservas.html')">
         <i class="fa-solid fa-calendar-days"></i>
+        <span>Reservas</span>
+    </div>
 
+    <div onclick="cargarVista('perfil.html')">
         <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+    </div>
 
-    </nav>
+</nav>
 
 </div>

@@ -71,14 +71,25 @@
     <!-- Barra inferior -->
     <nav class="bottom-nav">
 
+    <div onclick="cargarVista('dashboard.html')">
         <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
+    </div>
 
-        <i class="fa-solid fa-border-all active"></i>
+    <div class="active" onclick="cargarVista('establecimientos.html')">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Buscar</span>
+    </div>
 
+    <div onclick="cargarVista('reservas.html')">
         <i class="fa-solid fa-calendar-days"></i>
+        <span>Reservas</span>
+    </div>
 
+    <div onclick="cargarVista('perfil.html')">
         <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+    </div>
 
-    </nav>
-
+</nav>
 </div>

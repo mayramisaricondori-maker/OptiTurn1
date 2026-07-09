@@ -11,7 +11,7 @@
     display:flex;
     flex-direction:column;
 
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
 
 }
 
@@ -20,39 +20,42 @@
    HEADER
 =========================== */
 
-.header-establecimientos{
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-top: 20px;
-    position:relative;
-
-    margin-bottom:18px;
-
+.header-establecimientos {
+    display: grid;
+    grid-template-columns: 42px 1fr 42px;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 18px;
 }
 
-.btn-back{
-
-    position:absolute;
-    left:0;
-
-    border:none;
-    background:none;
-
-    font-size:24px;
-
-    cursor:pointer;
-
-    color:#333;
-
+.header-establecimientos::after {
+    content: "";
+    width: 42px;
+    height: 42px;
 }
 
-.header-establecimientos h2{
+.btn-back {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 14px;
+    background: #FFFFFF;
+    color: #1769FF;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .06);
+    cursor: pointer;
+}
 
-    font-size:22px;
-    font-weight:600;
-
+.header-establecimientos h2 {
+    color: #101C3D;
+    font-size: 19px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
 }
 
 
@@ -261,7 +264,7 @@
 
     border-radius:12px;
 
-    background:#F3F4F6;
+    background:#EAF2FF;
 
     display:flex;
 
@@ -275,14 +278,9 @@
 
 }
 
-.logo-box img{
-
-    width:45px;
-
-    height:45px;
-
-    object-fit:contain;
-
+.logo-box i {
+    color: #1769FF;
+    font-size: 23px;
 }
 
 
@@ -338,55 +336,46 @@
    BARRA INFERIOR
 =========================== */
 
-.bottom-nav{
-
-    margin-top:15px;
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:15px;
-
-    display:flex;
-
-    justify-content:space-around;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-
+.bottom-nav {
+    margin-top: 15px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 12px 10px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
 }
 
-.bottom-nav i{
-
-    font-size:22px;
-
-    color:#888;
-
+.bottom-nav div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: #64748B;
+    font-size: 10px;
+    cursor: pointer;
 }
 
-.bottom-nav .active{
-
-    color:#2563EB;
-
+.bottom-nav i {
+    font-size: 17px;
 }
 
+.bottom-nav .active {
+    color: #1769FF;
+    font-weight: 600;
+}
 
 /* ===========================
    SCROLL
 =========================== */
 
-.resultados::-webkit-scrollbar{
-
-    width:5px;
-
+.resultados::-webkit-scrollbar {
+    width: 4px;
 }
 
-.resultados::-webkit-scrollbar-thumb{
-
-    background:#2563EB;
-
-    border-radius:20px;
-
+.resultados::-webkit-scrollbar-thumb {
+    background: rgba(23, 105, 255, .25);
+    border-radius: 20px;
 }
 
 

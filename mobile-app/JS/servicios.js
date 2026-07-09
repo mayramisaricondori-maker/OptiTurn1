@@ -1,191 +1,183 @@
-// ================================
-// DATOS DE LAS SEDES
-// ================================
-
-const sedes = [
-
+const serviciosBase = [
     {
-        nombre: "RENIEC SEDE PRINCIPAL",
-        direccion: "Av. Arequipa 1234, Lima",
-        distancia: "A 1.2 km",
-        logo: "../assets/logo/reniec.png"
+        nombre: "Duplicado de DNI",
+        descripcion: "Solicita una nueva copia de tu documento.",
+        icono: "fa-solid fa-id-card",
+        personasEnFila: 12,
+        tiempoEspera: 35
     },
-
     {
-        nombre: "RENIEC Surquillo",
-        direccion: "Av. Angamos 542",
-        distancia: "A 2.1 km",
-        logo: "../assets/logo/reniec.png"
+        nombre: "Actualización de datos",
+        descripcion: "Modifica dirección, estado civil u otros datos.",
+        icono: "fa-solid fa-pen-to-square",
+        personasEnFila: 9,
+        tiempoEspera: 28
     },
-
     {
-        nombre: "RENIEC San Borja",
-        direccion: "Av. Aviación 2300",
-        distancia: "A 3.4 km",
-        logo: "../assets/logo/reniec.png"
+        nombre: "Rectificación de datos",
+        descripcion: "Corrige información registrada en tu documento.",
+        icono: "fa-solid fa-file-signature",
+        personasEnFila: 15,
+        tiempoEspera: 40
     },
-
     {
-        nombre: "RENIEC Miraflores",
-        direccion: "Av. Larco 800",
-        distancia: "A 4.2 km",
-        logo: "../assets/logo/reniec.png"
+        nombre: "Consulta de trámite",
+        descripcion: "Revisa el estado de un trámite iniciado.",
+        icono: "fa-solid fa-magnifying-glass-chart",
+        personasEnFila: 7,
+        tiempoEspera: 18
     }
-
 ];
 
+function obtenerEstablecimientoServicios() {
+    const guardado = localStorage.getItem("establecimientoSeleccionado");
 
-// ================================
-// ELEMENTOS
-// ================================
+    if (guardado) {
+        return JSON.parse(guardado);
+    }
 
-const lista = document.getElementById("listaSedes");
+    return {
+        nombre: "RENIEC",
+        descripcion: "Registro de identificación",
+        distancia: "A 1.2 km",
+        icono: "fa-solid fa-id-card"
+    };
+}
 
-const buscador = document.getElementById("txtBuscarSede");
+function pintarEstablecimientoServicios() {
+    const establecimiento = obtenerEstablecimientoServicios();
 
-const vistaResultados = document.getElementById("vistaResultados");
+    const nombre = document.getElementById("servicioEstablecimiento");
+    const descripcion = document.getElementById("servicioDescripcion");
+    const distancia = document.getElementById("servicioDistancia");
+    const icono = document.getElementById("servicioIcono");
 
-const vistaDetalle = document.getElementById("vistaDetalle");
+    if (nombre) nombre.textContent = establecimiento.nombre;
+    if (descripcion) descripcion.textContent = establecimiento.descripcion || "Servicios disponibles";
+    if (distancia) distancia.textContent = establecimiento.distancia || "A 1.2 km";
 
-const nombre = document.getElementById("nombreSede");
+    if (icono) {
+        icono.className = establecimiento.icono || "fa-solid fa-id-card";
+    }
+}
 
-const direccion = document.getElementById("direccionSede");
+function pintarServicios(datos) {
+    const lista = document.getElementById("listaServicios");
 
-
-// ================================
-// MOSTRAR SEDES
-// ================================
-
-function cargarSedes(datos){
+    if (!lista) return;
 
     lista.innerHTML = "";
 
-    datos.forEach((sede,index)=>{
-
+    datos.forEach((servicio, index) => {
         lista.innerHTML += `
-
-        <div class="sede-card" data-index="${index}">
-
-            <div class="info">
-
-                <img
-                    src="${sede.logo}"
-                    class="logo"
-                >
-
-                <div>
-
-                    <h4>${sede.nombre}</h4>
-
-                    <p>${sede.distancia}</p>
-
+            <div class="servicio-card" onclick="seleccionarServicio(${index})">
+                <div class="servicio-card-icon">
+                    <i class="${servicio.icono}"></i>
                 </div>
 
+                <div class="servicio-card-info">
+                    <h4>${servicio.nombre}</h4>
+                    <p>${servicio.descripcion}</p>
+                </div>
+
+                <i class="fa-solid fa-chevron-right"></i>
             </div>
-
-            <i class="fa-solid fa-chevron-right"></i>
-
-        </div>
-
         `;
-
     });
-
-    activarClicks();
-
 }
 
+function seleccionarServicio(index) {
+    const servicio = serviciosBase[index];
+    const establecimiento = obtenerEstablecimientoServicios();
 
-// ================================
-// CLICK EN UNA SEDE
-// ================================
+    const servicioSeleccionado = {
+        ...servicio,
+        establecimiento: establecimiento.nombre,
+        descripcionEstablecimiento: establecimiento.descripcion || "Servicios disponibles",
+        distancia: establecimiento.distancia || "A 1.2 km"
+    };
 
-function activarClicks(){
+    localStorage.setItem("servicioSeleccionado", JSON.stringify(servicioSeleccionado));
 
-    const cards = document.querySelectorAll(".sede-card");
+    const cards = document.querySelectorAll(".servicio-card");
+    cards.forEach((card) => card.classList.remove("active"));
 
-    cards.forEach(card=>{
+    if (cards[index]) {
+        cards[index].classList.add("active");
+    }
 
-        card.onclick = ()=>{
+    document.getElementById("nombreServicioSeleccionado").textContent = servicio.nombre;
+    document.getElementById("detalleServicioSeleccionado").textContent = servicio.descripcion;
+    document.getElementById("personasServicio").textContent = servicio.personasEnFila;
+    document.getElementById("tiempoServicio").textContent = `${servicio.tiempoEspera} min`;
 
-            const sede = sedes[card.dataset.index];
+    document.getElementById("servicioSeleccionadoBox").classList.remove("oculto");
+    setTimeout(() => {
+    const pantalla = document.querySelector(".servicios-screen");
 
-            nombre.textContent = sede.nombre;
-
-            direccion.textContent = sede.direccion;
-
-            vistaResultados.style.display = "none";
-
-            vistaDetalle.style.display = "block";
-
-        }
-
-    });
-
+    if (pantalla) {
+        pantalla.scrollTo({
+            top: pantalla.scrollHeight,
+            behavior: "smooth"
+        });
+    }
+    }, 100);
 }
 
+function buscarServicios() {
+    const input = document.getElementById("buscarServicio");
 
+    if (!input) return;
 
-// ================================
-// BUSCADOR
-// ================================
+    input.addEventListener("input", () => {
+        const texto = input.value.toLowerCase();
 
-buscador.addEventListener("input",()=>{
+        const filtrados = serviciosBase.filter((servicio) =>
+            servicio.nombre.toLowerCase().includes(texto) ||
+            servicio.descripcion.toLowerCase().includes(texto)
+        );
 
-    const texto = buscador.value.toLowerCase();
+        pintarServicios(filtrados);
+    });
+}
 
-    const resultado = sedes.filter(s=>
+function irACongestion() {
+    const seleccionado = localStorage.getItem("servicioSeleccionado");
 
-        s.nombre.toLowerCase().includes(texto)
-
-    );
-
-    cargarSedes(resultado);
-
-});
-
-
-
-// ================================
-// BOTON VOLVER AL MAPA
-// ================================
-
-document.getElementById("btnVolverMapa").onclick=()=>{
-
-    cargarVista("mapa.html");
-
-};
-
-
-
-// ================================
-// VOLVER A RESULTADOS
-// ================================
-
-document.getElementById("btnRegresarResultados").onclick=()=>{
-
-    vistaDetalle.style.display="none";
-
-    vistaResultados.style.display="block";
-
-};
-
-
-
-// ================================
-// CONGESTION
-// ================================
-
-document.getElementById("btnCongestion").onclick=()=>{
+    if (!seleccionado) {
+        alert("Selecciona un servicio antes de continuar.");
+        return;
+    }
 
     cargarVista("congestion.html");
+}
 
-};
+function iniciarServicios() {
+    pintarEstablecimientoServicios();
+    pintarServicios(serviciosBase);
+    buscarServicios();
+}
 
+window.seleccionarServicio = seleccionarServicio;
+window.irACongestion = irACongestion;
+window.iniciarServicios = iniciarServicios;
 
+document.addEventListener("DOMContentLoaded", () => {
+    const app = document.getElementById("app");
 
-// ================================
-// INICIO
-// ================================
+    if (!app) return;
 
-cargarSedes(sedes);
+    const observador = new MutationObserver(() => {
+        const pantalla = document.querySelector(".servicios-screen");
+
+        if (pantalla && !pantalla.dataset.iniciada) {
+            pantalla.dataset.iniciada = "true";
+            iniciarServicios();
+        }
+    });
+
+    observador.observe(app, {
+        childList: true,
+        subtree: true
+    });
+});

@@ -1,0 +1,94 @@
+<div class="estadistica-screen">
+
+    <header class="app-header">
+        <button class="app-back-btn" onclick="cargarVista('congestion.html')">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="app-header-title">
+            <h2>Recomendación</h2>
+            <p>Mejor horario para realizar tu trámite</p>
+        </div>
+    </header>
+
+    <section class="recomendacion-principal">
+
+        <div class="recomendacion-icon">
+            <i class="fa-solid fa-lightbulb"></i>
+        </div>
+
+        <span>Recomendación inteligente</span>
+
+        <h3 id="recomendacionTexto">
+            Acude entre 2:00 p.m. y 4:00 p.m.
+        </h3>
+
+        <p>
+            OptiTurn recomienda este horario porque presenta menor congestión y menor tiempo de espera.
+        </p>
+
+    </section>
+
+    <h3 class="section-title">Comparación de horarios</h3>
+
+    <section class="comparacion-horarios">
+
+        <div class="comparacion-card alto">
+            <span>Alta demanda</span>
+            <h4>10:00 a.m.</h4>
+            <p>Tiempo aproximado: 45 min</p>
+        </div>
+
+        <div class="comparacion-card medio">
+            <span>Demanda moderada</span>
+            <h4>12:00 p.m.</h4>
+            <p>Tiempo aproximado: 30 min</p>
+        </div>
+
+        <div class="comparacion-card bajo">
+            <span>Recomendado</span>
+            <h4>2:00 p.m. - 4:00 p.m.</h4>
+            <p>Tiempo aproximado: 15 min</p>
+        </div>
+
+    </section>
+
+    <section class="app-card recomendacion-extra">
+
+        <h3>Consejo para el usuario</h3>
+
+        <p>
+            Llega 10 minutos antes de tu horario estimado y verifica tus documentos antes de acudir.
+        </p>
+
+    </section>
+
+    <button class="btn-primary" onclick="cargarVista('servicios.html')">
+        Volver a servicios
+    </button>
+
+    <nav class="bottom-nav">
+
+        <div onclick="cargarVista('dashboard.html')">
+            <i class="fa-solid fa-house"></i>
+            <span>Inicio</span>
+        </div>
+
+        <div class="active" onclick="cargarVista('establecimientos.html')">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Buscar</span>
+        </div>
+
+        <div onclick="cargarVista('reservas.html')">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Reservas</span>
+        </div>
+
+        <div onclick="cargarVista('perfil.html')">
+            <i class="fa-solid fa-user"></i>
+            <span>Perfil</span>
+        </div>
+
+    </nav>
+
+</div>

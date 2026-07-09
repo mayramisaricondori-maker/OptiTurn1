@@ -1,6 +1,1 @@
-window.onload = () => {
-
-    cargarVista("splash.html");
-
-
-};
+// La carga inicial de la aplicación se controla desde router.js

@@ -1,439 +1,253 @@
-/* ==========================
-   CONTENEDOR
-========================== */
+.servicios-screen {
+    height: 100%;
+    background: var(--bg-app);
+    padding: 48px 18px 105px !important;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
 
-.servicios{
+.servicios-header {
+    display: grid;
+    grid-template-columns: 42px 1fr 42px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
 
-    height:100%;
-    background:#F5F7FB;
+.servicios-title {
+    text-align: center;
+}
 
-    padding:18px;
+.servicios-title h2 {
+    color: var(--text-main);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.1;
+}
 
-    display:flex;
-    flex-direction:column;
+.servicios-title p {
+    color: var(--text-muted);
+    font-size: 11px;
+    margin-top: 4px;
+}
 
-    font-family:Arial, Helvetica, sans-serif;
+.establecimiento-resumen {
+    background: var(--white);
+    border-radius: 22px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 16px;
+}
 
+.establecimiento-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.establecimiento-resumen h3 {
+    color: var(--text-main);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.establecimiento-resumen p {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin: 3px 0;
+}
+
+.establecimiento-resumen span {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.servicios-search {
+    height: 50px;
+    background: var(--white);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 16px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 8px;
+}
+
+.servicios-search i {
+    color: var(--text-soft);
+    font-size: 15px;
+}
+
+.servicios-search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: var(--text-main);
+}
+
+.lista-servicios {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 3px;
+    padding-bottom: 12px;
+}
+
+.lista-servicios::-webkit-scrollbar {
+    width: 4px;
+}
+
+.lista-servicios::-webkit-scrollbar-thumb {
+    background: rgba(23, 105, 255, .25);
+    border-radius: 20px;
+}
+
+.servicio-card {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: var(--shadow-soft);
+    cursor: pointer;
+}
+
+.servicio-card.active {
+    border: 1px solid rgba(23, 105, 255, .35);
+    background: var(--primary-soft);
+}
+
+.servicio-card-icon {
+    width: 48px;
+    height: 44px;
+    border-radius: 15px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.servicio-card.active .servicio-card-icon {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.servicio-card-info {
+    flex: 1;
+}
+
+.servicio-card-info h4 {
+    color: var(--text-main);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.servicio-card-info p {
+    color: var(--text-muted);
+    font-size: 11px;
+    margin-top: 3px;
+    line-height: 1.35;
+}
+
+.servicio-card i.fa-chevron-right {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+.servicio-seleccionado {
+    background: var(--white);
+    border-radius: 22px;
+    padding: 16px;
+    box-shadow: var(--shadow-soft);
+    margin-top: 16px;
+    margin-bottom: 100px;
+}
+
+.servicio-seleccionado span {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.servicio-seleccionado h3 {
+    color: var(--text-main);
+    font-size: 17px;
+    margin-top: 4px;
+}
+
+.servicio-seleccionado p {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.servicio-metricas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 14px 0;
+}
+
+.servicio-metricas div {
+    background: #F8FAFC;
+    border: 1px solid #E5EAF3;
+    border-radius: 16px;
+    padding: 12px;
+    text-align: center;
+}
+
+.servicio-metricas i {
+    color: var(--primary);
+    font-size: 16px;
+}
+
+.servicio-metricas strong {
+    display: block;
+    color: var(--text-main);
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.servicio-metricas small {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.servicios-screen::-webkit-scrollbar {
+    width: 0;
 }
 
 
-/* ==========================
-   HEADER
-========================== */
-
-.header-servicios{
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    position:relative;
-
-    margin-bottom:18px;
-
+.servicios-screen {
+    height: 100% !important;
+    background: var(--bg-app);
+    padding: 48px 18px 22px !important;
+    overflow-y: auto !important;
+    scrollbar-width: none !important;
 }
 
-.btn-back{
-
-    position:absolute;
-
-    left:0;
-
-    border:none;
-    background:none;
-
-    font-size:24px;
-
-    color:#333;
-
-    cursor:pointer;
-
-}
-
-.header-servicios h2{
-
-    font-size:22px;
-
-    font-weight:600;
-
+.servicio-seleccionado {
+    margin-bottom: 0 !important;
 }
 
 
-/* ==========================
-   BUSCADOR
-========================== */
-
-.search-box{
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:14px 18px;
-
-    display:flex;
-
-    align-items:center;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.06);
-
-}
-
-.search-box i{
-
-    color:#999;
-
-}
-
-.search-box input{
-
-    flex:1;
-
-    margin-left:10px;
-
-    border:none;
-
-    outline:none;
-
-    background:none;
-
-}
-
-
-/* ==========================
-   TITULOS
-========================== */
-
-.titulo{
-
-    margin:20px 0 15px;
-
-    font-size:20px;
-
-    font-weight:600;
-
-}
-
-
-/* ==========================
-   RESULTADOS
-========================== */
-
-#listaSedes{
-
-    flex:1;
-
-    overflow-y:auto;
-
-}
-
-
-/* ==========================
-   TARJETA RESULTADO
-========================== */
-
-.sede-card{
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:14px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:14px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.06);
-
-    cursor:pointer;
-
-    transition:.25s;
-
-}
-
-.sede-card:hover{
-
-    transform:translateY(-2px);
-
-}
-
-.info{
-
-    display:flex;
-
-    align-items:center;
-
-}
-
-.logo{
-
-    width:55px;
-
-    height:55px;
-
-    border-radius:12px;
-
-    object-fit:contain;
-
-    margin-right:14px;
-
-    background:#F4F4F4;
-
-    padding:5px;
-
-}
-
-.info h4{
-
-    margin-bottom:6px;
-
-}
-
-.info p{
-
-    color:#777;
-
-    font-size:14px;
-
-}
-
-.sede-card i{
-
-    font-size:22px;
-
-    color:#666;
-
-}
-
-
-/* ==========================
-   DETALLE
-========================== */
-
-.card-establecimiento{
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:16px;
-
-    display:flex;
-
-    align-items:center;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.06);
-
-}
-
-.logo-establecimiento{
-
-    width:70px;
-
-    height:70px;
-
-    object-fit:contain;
-
-    margin-right:15px;
-
-}
-
-.card-establecimiento h3{
-
-    margin-bottom:5px;
-
-}
-
-.card-establecimiento p{
-
-    color:#666;
-
-    margin-bottom:6px;
-
-}
-
-.card-establecimiento span{
-
-    color:#2563EB;
-
-    font-size:14px;
-
-}
-
-
-/* ==========================
-   HORARIO
-========================== */
-
-.horario{
-
-    margin-top:10px;
-
-}
-
-.horario-item{
-
-    display:flex;
-
-    margin-bottom:18px;
-
-    align-items:flex-start;
-
-}
-
-.horario-item i{
-
-    font-size:30px;
-
-    margin-right:15px;
-
-    color:#333;
-
-}
-
-.horario-item strong{
-
-    display:block;
-
-    margin-bottom:4px;
-
-}
-
-.horario-item p{
-
-    color:#718096;
-
-}
-
-
-/* ==========================
-   SERVICIOS
-========================== */
-
-.lista-servicios{
-
-    margin-top:10px;
-
-}
-
-.servicio-item{
-
-    display:flex;
-
-    align-items:center;
-
-    margin-bottom:15px;
-
-}
-
-.servicio-item i{
-
-    color:#21A366;
-
-    font-size:28px;
-
-    margin-right:12px;
-
-}
-
-.servicio-item span{
-
-    font-size:16px;
-
-}
-
-
-/* ==========================
-   BOTON
-========================== */
-
-.btn-primary{
-
-    margin-top:auto;
-
-    width:100%;
-
-    padding:15px;
-
-    border:none;
-
-    border-radius:14px;
-
-    background:#2563EB;
-
-    color:white;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    transition:.25s;
-
-}
-
-.btn-primary:hover{
-
-    background:#1D4ED8;
-
-}
-
-
-/* ==========================
-   BARRA INFERIOR
-========================== */
-
-.bottom-nav{
-
-    margin-top:18px;
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:15px;
-
-    display:flex;
-
-    justify-content:space-around;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-
-}
-
-.bottom-nav i{
-
-    font-size:22px;
-
-    color:#888;
-
-}
-
-.bottom-nav .active{
-
-    color:#2563EB;
-
-}
-
-
-/* ==========================
-   SCROLL
-========================== */
-
-#listaSedes::-webkit-scrollbar{
-
-    width:5px;
-
-}
-
-#listaSedes::-webkit-scrollbar-thumb{
-
-    background:#2563EB;
-
-    border-radius:20px;
-
-}

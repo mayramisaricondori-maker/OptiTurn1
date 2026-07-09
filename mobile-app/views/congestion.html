@@ -1,0 +1,111 @@
+<div class="congestion-screen">
+
+    <header class="app-header">
+        <button class="app-back-btn" onclick="cargarVista('servicios.html')">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="app-header-title">
+            <h2>Congestión</h2>
+            <p>Estado actual del servicio seleccionado</p>
+        </div>
+    </header>
+
+    <section class="congestion-main-card">
+
+        <div class="congestion-top">
+            <div class="congestion-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div>
+                <span id="estadoCongestion" class="estado-badge">Moderada</span>
+                <h3 id="nombreServicioCongestion">Duplicado de DNI</h3>
+                <p id="nombreEstablecimientoCongestion">RENIEC</p>
+            </div>
+        </div>
+
+        <div class="congestion-bar-box">
+            <div class="congestion-bar-info">
+                <span>Nivel de congestión</span>
+                <strong id="porcentajeCongestion">65%</strong>
+            </div>
+
+            <div class="congestion-bar">
+                <div id="barraCongestion"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="metricas-congestion">
+
+        <div class="metrica-card">
+            <i class="fa-solid fa-user-group"></i>
+            <strong id="personasFila">12</strong>
+            <span>Personas en fila</span>
+        </div>
+
+        <div class="metrica-card">
+            <i class="fa-solid fa-clock"></i>
+            <strong id="tiempoEspera">35 min</strong>
+            <span>Tiempo de espera</span>
+        </div>
+
+        <div class="metrica-card">
+            <i class="fa-solid fa-gauge-high"></i>
+            <strong id="capacidadAtencion">70%</strong>
+            <span>Capacidad usada</span>
+        </div>
+
+        <div class="metrica-card">
+            <i class="fa-solid fa-hourglass-half"></i>
+            <strong id="promedioAtencion">8 min</strong>
+            <span>Promedio atención</span>
+        </div>
+
+    </section>
+
+    <section class="app-card congestion-recomendacion">
+        <div>
+            <span>Recomendación</span>
+            <h3 id="textoRecomendacion">Acude entre 2:00 p.m. y 4:00 p.m.</h3>
+            <p>Este horario presenta menor cantidad de personas en espera.</p>
+        </div>
+    </section>
+
+    <div class="acciones-congestion">
+        <button class="btn-primary" onclick="cargarVista('tiempos.html')">
+            Ver tiempos de espera
+        </button>
+
+        <button class="btn-secondary" onclick="cargarVista('recomendaciones.html')">
+            Ver recomendaciones
+        </button>
+    </div>
+
+    <nav class="bottom-nav">
+
+        <div onclick="cargarVista('dashboard.html')">
+            <i class="fa-solid fa-house"></i>
+            <span>Inicio</span>
+        </div>
+
+        <div class="active" onclick="cargarVista('establecimientos.html')">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Buscar</span>
+        </div>
+
+        <div onclick="cargarVista('reservas.html')">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Reservas</span>
+        </div>
+
+        <div onclick="cargarVista('perfil.html')">
+            <i class="fa-solid fa-user"></i>
+            <span>Perfil</span>
+        </div>
+
+    </nav>
+
+</div>
