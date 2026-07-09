@@ -1,117 +1,410 @@
 <div class="dashboard">
 
-    <!-- Header -->
 
-    <header class="header">
+<!-- HEADER -->
 
-        <div>
+<header class="dash-header">
 
-            <h2>Hola, Mayra 👋</h2>
+    <button class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+    </button>
 
-            <p>¿Qué trámite deseas realizar?</p>
 
-        </div>
-
-        <img src="../assets/logo/logo.png" class="profile">
-
-    </header>
-
-    <!-- Buscador -->
-
-    <div class="search-box">
-
-        <i class="fa-solid fa-magnifying-glass"></i>
-
-        <input type="text" placeholder="Buscar institución...">
-
-    </div>
-
-    <!-- Accesos rápidos -->
-
-    <section class="quick">
-
-        <div class="quick-card">
-            <i class="fa-solid fa-calendar-days"></i>
-            <span>Reservar</span>
-        </div>
-
-        <div class="quick-card">
-            <i class="fa-solid fa-users"></i>
-            <span>Fila</span>
-        </div>
-
-        <div class="quick-card">
-            <i class="fa-solid fa-building"></i>
-            <span>Locales</span>
-        </div>
-
-        <div class="quick-card">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-            <span>Historial</span>
-        </div>
-
-    </section>
-
-    <!-- Próxima cita -->
-
-    <div class="card appointment">
-
-        <h3>Próximo turno</h3>
-
-        <h4>RENIEC</h4>
-
-        <p>Viernes 12 - 09:30 AM</p>
-
-        <button class="btn-primary" onclick="cargarVista('notificaciones.html')">
-            Ver detalle
-        </button>
-
-    </div>
-
-    <!-- Instituciones -->
-
-    <h3 class="section-title">
-
-        Instituciones
-
+    <h3>
+        OptiTurn
     </h3>
 
-    <div class="institutions">
 
-        <div class="inst-card">
+    <button class="notification-btn">
 
-            <i class="fa-solid fa-landmark"></i>
+        <i class="fa-solid fa-bell"></i>
 
-            <h4>SUNAT</h4>
+        <span>
+        3
+        </span>
 
-            <p>Reserva tu turno</p>
+    </button>
 
-        </div>
 
-        <div class="inst-card">
+</header>
 
-            <i class="fa-solid fa-id-card"></i>
 
-            <h4>RENIEC</h4>
 
-            <p>DNI y trámites</p>
 
-        </div>
 
-    </div>
+<!-- BIENVENIDA -->
 
-    <!-- Barra inferior -->
+<section class="welcome">
 
-    <nav class="bottom-nav">
+<h2>
+¡Hola, Alexander! 👋
+</h2>
 
-        <i class="fa-solid fa-house active"></i>
 
-        <i class="fa-solid fa-calendar-check"></i>
+<p>
+Evita filas y conoce tu tiempo de espera antes de ir.
+</p>
 
-        <i class="fa-solid fa-bell" onclick="cargarVista('notificaciones.html')"></i>
 
-        <i class="fa-solid fa-user"></i>
+</section>
 
-    </nav>
+
+
+
+
+
+
+
+<!-- BUSCADOR -->
+
+<div class="search-container">
+
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+
+<input 
+type="text"
+placeholder="Buscar servicio o establecimiento"
+>
+
+
+<button onclick="loadPage('views/busqueda.html')">
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- ACCIONES -->
+
+
+<div class="actions">
+
+
+<div class="action blue"
+onclick="loadPage('views/reservas.html')">
+
+
+<i class="fa-solid fa-calendar-check"></i>
+
+
+<h4>
+Reservar turno
+</h4>
+
+
+<p>
+Elige servicio y asegura tu atención
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="action green"
+onclick="loadPage('views/reservas.html')">
+
+
+<i class="fa-solid fa-ticket"></i>
+
+
+<h4>
+Mis turnos
+</h4>
+
+
+<p>
+Consulta tus turnos actuales y anteriores
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- TURNO ACTUAL -->
+
+
+<section class="turn-card">
+
+
+<h5>
+TU TURNO ACTUAL
+</h5>
+
+
+
+<div class="turn-title">
+
+
+<div>
+
+<h3>
+SUNAT - DNI TRÁMITE
+</h3>
+
+
+<p>
+Av. Arequipa 1234 Lima
+</p>
+
+
+</div>
+
+
+<strong>
+A025
+</strong>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="turn-info">
+
+
+<div>
+
+<i class="fa-solid fa-users"></i>
+
+<span>
+8
+</span>
+
+<small>
+Personas antes
+</small>
+
+</div>
+
+
+
+
+<div>
+
+<i class="fa-regular fa-clock"></i>
+
+<span>
+20 min
+</span>
+
+<small>
+Tiempo espera
+</small>
+
+
+</div>
+
+
+
+
+<div>
+
+<i class="fa-regular fa-calendar"></i>
+
+<span>
+10:30 AM
+</span>
+
+<small>
+Horario
+</small>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<button onclick="loadPage('views/qr.html')">
+
+<i class="fa-solid fa-qrcode"></i>
+
+Ver código QR
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ESTADO -->
+
+
+<section class="status-card"
+onclick="loadPage('views/gestion.html')">
+
+
+<h5>
+ESTADO DEL SERVICIO
+</h5>
+
+
+
+<div class="status">
+
+
+<div>
+
+<i class="fa-solid fa-user-group"></i>
+
+<b>
+12
+</b>
+
+<p>
+Personas esperando
+</p>
+
+
+</div>
+
+
+
+
+<div>
+
+<i class="fa-solid fa-clock"></i>
+
+<b>
+15 min
+</b>
+
+<p>
+Tiempo promedio
+</p>
+
+
+</div>
+
+
+
+
+<div>
+
+<i class="fa-solid fa-star"></i>
+
+<b>
+2:00 PM
+</b>
+
+<p>
+Mejor horario
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- NAVEGACION -->
+
+
+<nav class="bottom-nav">
+
+
+<div class="active"
+onclick="loadPage('views/dashboard.html')">
+
+
+<i class="fa-solid fa-house"></i>
+
+
+<span>
+Inicio
+</span>
+
+
+</div>
+
+
+
+
+<div onclick="loadPage('views/reservas.html')">
+
+
+<i class="fa-solid fa-calendar-days"></i>
+
+
+<span>
+Reservas
+</span>
+
+
+</div>
+
+
+
+
+
+<div onclick="loadPage('views/perfil.html')">
+
+
+<i class="fa-solid fa-user"></i>
+
+
+<span>
+Perfil
+</span>
+
+
+</div>
+
+
+
+</nav>
+
+
 
 </div>
