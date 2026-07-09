@@ -1,0 +1,44 @@
+<div class="calificacion-screen">
+
+    <header class="noti-header">
+        <button class="back-btn" onclick="cargarVista('notificaciones.html')">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div>
+            <h2>Calificación</h2>
+            <p>Cuéntanos cómo fue tu atención</p>
+        </div>
+    </header>
+
+    <section class="rating-card">
+
+        <div class="rating-icon">
+            <i class="fa-solid fa-star"></i>
+        </div>
+
+        <h3>¿Cómo fue tu experiencia?</h3>
+        <p>Tu opinión ayuda a mejorar la atención del servicio.</p>
+
+        <div class="stars" id="stars">
+            <button onclick="seleccionarPuntaje(1)">★</button>
+            <button onclick="seleccionarPuntaje(2)">★</button>
+            <button onclick="seleccionarPuntaje(3)">★</button>
+            <button onclick="seleccionarPuntaje(4)">★</button>
+            <button onclick="seleccionarPuntaje(5)">★</button>
+        </div>
+
+        <textarea id="comentarioCalificacion" placeholder="Escribe un comentario breve..."></textarea>
+
+        <button class="btn-primary full" onclick="enviarCalificacion()">
+            Enviar calificación
+        </button>
+
+    </section>
+
+    <button class="support-link" onclick="cargarVista('dashboard.html')">
+        <i class="fa-solid fa-house"></i>
+        Volver al inicio
+    </button>
+
+</div>
