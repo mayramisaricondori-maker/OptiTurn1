@@ -1,0 +1,193 @@
+<div class="servicios">
+
+    <!-- ===================== -->
+    <!-- PANTALLA 1: RESULTADOS -->
+    <!-- ===================== -->
+
+    <section id="vistaResultados">
+
+        <!-- Header -->
+        <header class="header-servicios">
+
+            <button class="btn-back" id="btnVolverMapa">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <h2>Mapa</h2>
+
+        </header>
+
+        <!-- Buscador -->
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="txtBuscarSede"
+                placeholder="Buscar establecimiento"
+            >
+
+        </div>
+
+        <h3 class="titulo">Resultados</h3>
+
+        <!-- Aquí el JS cargará las sedes -->
+        <div id="listaSedes"></div>
+
+    </section>
+
+
+    <!-- ===================== -->
+    <!-- PANTALLA 2: DETALLE -->
+    <!-- ===================== -->
+
+    <section id="vistaDetalle" style="display:none;">
+
+        <header class="header-servicios">
+
+            <button class="btn-back" id="btnRegresarResultados">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <h2>Detalle del establecimiento</h2>
+
+        </header>
+
+        <!-- Tarjeta -->
+        <div class="card-establecimiento">
+
+            <img
+                src="../assets/logo/reniec.png"
+                class="logo-establecimiento"
+            >
+
+            <div>
+
+                <h3 id="nombreSede">
+                    RENIEC SEDE PRINCIPAL
+                </h3>
+
+                <p>
+                    Registro de identificación
+                </p>
+
+                <span id="direccionSede">
+                    Av. Arequipa 1234, Lima
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Horario -->
+
+        <h3 class="titulo">
+            Horario de atención
+        </h3>
+
+        <div class="horario">
+
+            <div class="horario-item">
+
+                <i class="fa-regular fa-clock"></i>
+
+                <div>
+
+                    <strong>Lunes a Viernes</strong>
+
+                    <p>08:00 a.m. - 05:00 p.m.</p>
+
+                </div>
+
+            </div>
+
+            <div class="horario-item">
+
+                <i class="fa-regular fa-clock"></i>
+
+                <div>
+
+                    <strong>Sábado</strong>
+
+                    <p>08:00 a.m. - 12:00 p.m.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Servicios -->
+
+        <h3 class="titulo">
+            Servicios disponibles
+        </h3>
+
+        <div class="lista-servicios">
+
+            <div class="servicio-item">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>DNI</span>
+
+            </div>
+
+            <div class="servicio-item">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>Duplicado de DNI</span>
+
+            </div>
+
+            <div class="servicio-item">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>Actualización de datos</span>
+
+            </div>
+
+            <div class="servicio-item">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>Rectificación de datos</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Botón -->
+
+        <button
+            class="btn-primary"
+            id="btnCongestion">
+
+            Visualizar congestión
+
+        </button>
+
+    </section>
+
+
+    <!-- Barra inferior -->
+
+    <nav class="bottom-nav">
+
+        <i class="fa-solid fa-house"></i>
+
+        <i class="fa-solid fa-border-all active"></i>
+
+        <i class="fa-solid fa-calendar-days"></i>
+
+        <i class="fa-solid fa-user"></i>
+
+    </nav>
+
+</div>

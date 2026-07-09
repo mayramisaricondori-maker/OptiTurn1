@@ -1,0 +1,411 @@
+/* ===========================
+   CONTENEDOR PRINCIPAL
+=========================== */
+
+.establecimientos{
+
+    height:100%;
+    background:#F5F7FB;
+
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header-establecimientos{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    margin-bottom:18px;
+
+}
+
+.btn-back{
+
+    position:absolute;
+    left:0;
+
+    border:none;
+    background:none;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    color:#333;
+
+}
+
+.header-establecimientos h2{
+
+    font-size:22px;
+    font-weight:600;
+
+}
+
+
+/* ===========================
+   BUSCADOR
+=========================== */
+
+.search-box{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:14px 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+
+}
+
+.search-box i{
+
+    color:#999;
+
+}
+
+.search-box input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    margin-left:10px;
+
+    background:none;
+
+    font-size:15px;
+
+}
+
+
+/* ===========================
+   TITULOS
+=========================== */
+
+.categorias h3,
+.resultados h3{
+
+    margin-top:22px;
+    margin-bottom:15px;
+
+    font-size:19px;
+
+}
+
+
+/* ===========================
+   CATEGORIAS
+=========================== */
+
+.categorias-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:12px;
+
+}
+
+.categoria{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:12px 6px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.05);
+
+}
+
+.categoria i{
+
+    font-size:22px;
+
+    color:#555;
+
+    margin-bottom:8px;
+
+}
+
+.categoria span{
+
+    font-size:12px;
+
+    color:#666;
+
+}
+
+.categoria:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.categoria.active{
+
+    background:#E8F0FE;
+
+    border:2px solid #2563EB;
+
+}
+
+.categoria.active i,
+.categoria.active span{
+
+    color:#2563EB;
+
+}
+
+
+/* ===========================
+   RESULTADOS
+=========================== */
+
+.resultados{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    margin-top:10px;
+
+}
+
+
+/* ===========================
+   TARJETA
+=========================== */
+
+.resultado-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:14px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.resultado-card:hover{
+
+    transform:scale(1.02);
+
+}
+
+.info{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo-box{
+
+    width:55px;
+    height:55px;
+
+    border-radius:12px;
+
+    background:#F3F4F6;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-right:14px;
+
+    overflow:hidden;
+
+}
+
+.logo-box img{
+
+    width:45px;
+
+    height:45px;
+
+    object-fit:contain;
+
+}
+
+
+/* ===========================
+   TEXTO
+=========================== */
+
+.datos h4{
+
+    margin:0;
+
+    font-size:18px;
+
+    color:#222;
+
+}
+
+.datos p{
+
+    margin:4px 0;
+
+    font-size:14px;
+
+    color:#666;
+
+}
+
+.distancia{
+
+    color:#2563EB;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+/* ===========================
+   FLECHA
+=========================== */
+
+.resultado-card i.fa-chevron-right{
+
+    font-size:22px;
+
+    color:#777;
+
+}
+
+
+/* ===========================
+   BARRA INFERIOR
+=========================== */
+
+.bottom-nav{
+
+    margin-top:15px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:15px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+.bottom-nav i{
+
+    font-size:22px;
+
+    color:#888;
+
+}
+
+.bottom-nav .active{
+
+    color:#2563EB;
+
+}
+
+
+/* ===========================
+   SCROLL
+=========================== */
+
+.resultados::-webkit-scrollbar{
+
+    width:5px;
+
+}
+
+.resultados::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:20px;
+
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:390px){
+
+    .categoria span{
+
+        font-size:11px;
+
+    }
+
+    .datos h4{
+
+        font-size:16px;
+
+    }
+
+}
