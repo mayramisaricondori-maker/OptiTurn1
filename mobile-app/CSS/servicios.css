@@ -1,9 +1,6 @@
 .servicios-screen {
-    height: 100%;
     background: var(--bg-app);
-    padding: 48px 18px 105px !important;
-    overflow-y: auto;
-    scrollbar-width: none;
+    padding: 48px 18px 105px;
 }
 
 .servicios-header {
@@ -179,7 +176,7 @@
     padding: 16px;
     box-shadow: var(--shadow-soft);
     margin-top: 16px;
-    margin-bottom: 100px;
+    margin-bottom: 16px;
 }
 
 .servicio-seleccionado span {
@@ -237,17 +234,17 @@
     width: 0;
 }
 
-
-.servicios-screen {
-    height: 100% !important;
-    background: var(--bg-app);
-    padding: 48px 18px 22px !important;
-    overflow-y: auto !important;
-    scrollbar-width: none !important;
+.servicio-acciones {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
 }
 
-.servicio-seleccionado {
-    margin-bottom: 0 !important;
+.servicio-acciones .btn-primary,
+.servicio-acciones .btn-secondary {
+    width: 100%;
 }
+
+
 
 

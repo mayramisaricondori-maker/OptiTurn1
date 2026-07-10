@@ -56,9 +56,25 @@
             </div>
         </div>
 
-        <button class="btn-primary" onclick="irACongestion()">
-            Visualizar congestión
-        </button>
+        <div class="servicio-acciones">
+
+            <button
+                type="button"
+                class="btn-secondary"
+                onclick="irACongestion()"
+            >
+                Visualizar congestión
+            </button>
+
+            <button
+                type="button"
+                class="btn-primary"
+                onclick="irAReservas()"
+            >
+                Reservar turno
+            </button>
+
+        </div>
 
     </section>
 
@@ -74,7 +90,7 @@
         <span>Buscar</span>
     </div>
 
-    <div onclick="cargarVista('reservas.html')">
+    <div onclick="cargarVista('misTurnos.html')">
         <i class="fa-solid fa-calendar-days"></i>
         <span>Reservas</span>
     </div>

@@ -29,6 +29,8 @@ const serviciosBase = [
     }
 ];
 
+let serviciosVisibles = [...serviciosBase];
+
 function obtenerEstablecimientoServicios() {
     const guardado = localStorage.getItem("establecimientoSeleccionado");
 
@@ -65,7 +67,7 @@ function pintarServicios(datos) {
     const lista = document.getElementById("listaServicios");
 
     if (!lista) return;
-
+    serviciosVisibles = datos;
     lista.innerHTML = "";
 
     datos.forEach((servicio, index) => {
@@ -87,7 +89,8 @@ function pintarServicios(datos) {
 }
 
 function seleccionarServicio(index) {
-    const servicio = serviciosBase[index];
+    const servicio = serviciosVisibles[index];
+    if (!servicio) return;
     const establecimiento = obtenerEstablecimientoServicios();
 
     const servicioSeleccionado = {
@@ -152,6 +155,19 @@ function irACongestion() {
     cargarVista("congestion.html");
 }
 
+function irAReservas() {
+    const seleccionado = localStorage.getItem(
+        "servicioSeleccionado"
+    );
+
+    if (!seleccionado) {
+        alert("Selecciona un servicio antes de reservar.");
+        return;
+    }
+
+    cargarVista("reservas.html");
+}
+
 function iniciarServicios() {
     pintarEstablecimientoServicios();
     pintarServicios(serviciosBase);
@@ -161,23 +177,5 @@ function iniciarServicios() {
 window.seleccionarServicio = seleccionarServicio;
 window.irACongestion = irACongestion;
 window.iniciarServicios = iniciarServicios;
+window.irAReservas = irAReservas;
 
-document.addEventListener("DOMContentLoaded", () => {
-    const app = document.getElementById("app");
-
-    if (!app) return;
-
-    const observador = new MutationObserver(() => {
-        const pantalla = document.querySelector(".servicios-screen");
-
-        if (pantalla && !pantalla.dataset.iniciada) {
-            pantalla.dataset.iniciada = "true";
-            iniciarServicios();
-        }
-    });
-
-    observador.observe(app, {
-        childList: true,
-        subtree: true
-    });
-});

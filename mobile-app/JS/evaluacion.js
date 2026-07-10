@@ -30,44 +30,46 @@ function seleccionarPuntaje(puntaje) {
 }
 
 function enviarCalificacion() {
-    const comentario = document.getElementById("comentarioCalificacion").value.trim();
+    const comentarioInput = document.getElementById("comentarioCalificacion");
+    const comentario = comentarioInput
+        ? comentarioInput.value.trim()
+        : "";
 
     if (puntajeSeleccionado === 0) {
         alert("Selecciona una calificación antes de enviar.");
         return;
     }
 
+    const turnoGuardado = localStorage.getItem("turnoActivo");
+    const reservaGuardada = localStorage.getItem("reservaActual");
+
+    let institucion = "RENIEC";
+    let servicio = "Duplicado de DNI";
+
+    if (turnoGuardado) {
+        const turno = JSON.parse(turnoGuardado);
+        institucion = turno.institucion || institucion;
+        servicio = turno.servicio || servicio;
+    } else if (reservaGuardada) {
+        const reserva = JSON.parse(reservaGuardada);
+        institucion = reserva.establecimiento || institucion;
+        servicio = reserva.servicio || servicio;
+    }
+
     const calificacion = {
-        institucion: "RENIEC",
-        servicio: "Duplicado de DNI",
+        institucion,
+        servicio,
         puntaje: puntajeSeleccionado,
         comentario: comentario || "Sin comentario",
         fecha: new Date().toLocaleDateString("es-PE")
     };
 
-    localStorage.setItem("calificacionServicio", JSON.stringify(calificacion));
+    localStorage.setItem(
+        "calificacionServicio",
+        JSON.stringify(calificacion)
+    );
 
     alert("Gracias por calificar tu experiencia.");
 
     cargarVista("dashboard.html");
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    const app = document.getElementById("app");
-
-    if (!app) return;
-
-    const observador = new MutationObserver(() => {
-        const pantalla = document.querySelector(".calificacion-screen");
-
-        if (pantalla && !pantalla.dataset.iniciada) {
-            pantalla.dataset.iniciada = "true";
-            iniciarCalificacion();
-        }
-    });
-
-    observador.observe(app, {
-        childList: true,
-        subtree: true
-    });
-});

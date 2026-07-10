@@ -1,9 +1,6 @@
 .congestion-screen {
-    height: 100%;
     background: var(--bg-app);
-    padding: 48px 18px 125px;
-    overflow-y: auto;
-    scrollbar-width: none;
+    padding: 48px 18px 105px;
 }
 
 .congestion-screen::-webkit-scrollbar {
@@ -163,33 +160,5 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 95px;
-}
-
-.congestion-screen {
-    height: 100%;
-    background: var(--bg-app);
-    padding: 48px 18px 18px !important;
-    overflow-y: auto;
-    scrollbar-width: none;
-    position: static !important;
-}
-
-.acciones-congestion {
-    margin-bottom: 0 !important;
-}
-
-.congestion-screen {
-    height: 100% !important;
-    background: var(--bg-app);
-    padding: 48px 18px 22px !important;
-    overflow-y: auto !important;
-    scrollbar-width: none !important;
-}
-
-.acciones-congestion {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 16px;
 }

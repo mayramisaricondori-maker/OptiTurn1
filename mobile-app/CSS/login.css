@@ -83,19 +83,21 @@ font-size:15px;
 
 }
 
-.icon{
-    position:absolute;
-    left:15px;
-    top:50%;
-    transform:translateY(-50%);
+.icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8b8b8b;
 }
 
-.eye{
-    position:absolute;
-    right:15px;
-    top:50%;
-    transform:translateY(-50%);
-    cursor:pointer;
+.eye {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #8b8b8b;
 }
 
 .forgot{
@@ -184,15 +186,5 @@ transform:scale(.98);
 
 }
 
-.icon{
 
-    color:#8b8b8b;
-
-}
-
-.eye{
-
-    color:#8b8b8b;
-
-}
 

@@ -34,23 +34,3 @@ function iniciarMapa() {
         icono.className = establecimiento.icono || "fa-solid fa-id-card";
     }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    const app = document.getElementById("app");
-
-    if (!app) return;
-
-    const observador = new MutationObserver(() => {
-        const pantalla = document.querySelector(".mapa-screen");
-
-        if (pantalla && !pantalla.dataset.iniciada) {
-            pantalla.dataset.iniciada = "true";
-            iniciarMapa();
-        }
-    });
-
-    observador.observe(app, {
-        childList: true,
-        subtree: true
-    });
-});

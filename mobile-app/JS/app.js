@@ -1,1 +1,0 @@
-// La carga inicial de la aplicación se controla desde router.js

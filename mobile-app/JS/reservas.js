@@ -14,6 +14,12 @@ function obtenerServicioReserva() {
 }
 
 function iniciarReservas() {
+    horarioReserva = "09:30 AM";
+
+    document.querySelectorAll(".horario-opcion").forEach((opcion, index) => {
+        opcion.classList.toggle("active", index === 0);
+    });
+
     const servicio = obtenerServicioReserva();
 
     const nombre = document.getElementById("reservaServicio");
@@ -55,10 +61,34 @@ function confirmarReserva() {
         estado: "Confirmado"
     };
 
-    localStorage.setItem("reservaActual", JSON.stringify(reserva));
+   
+    localStorage.setItem(
+        "reservaActual",
+        JSON.stringify(reserva)
+    );
+
+    
+    const turnoActivo = {
+        institucion: reserva.establecimiento,
+        servicio: reserva.servicio,
+        horario: reserva.horario,
+        tiempoEstimado: `${reserva.tiempoEspera} min`,
+        estado: "Pendiente de confirmación"
+    };
+
+    localStorage.setItem(
+        "turnoActivo",
+        JSON.stringify(turnoActivo)
+    );
+
     cargarVista("qr.html");
+}
+
+function cambiarServicioReserva() {
+    cargarVista("servicios.html");
 }
 
 window.iniciarReservas = iniciarReservas;
 window.seleccionarHorarioReserva = seleccionarHorarioReserva;
 window.confirmarReserva = confirmarReserva;
+window.cambiarServicioReserva = cambiarServicioReserva;
