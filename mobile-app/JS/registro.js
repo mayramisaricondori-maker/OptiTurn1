@@ -1,50 +1,20 @@
-const eye1 = document.getElementById("eye1");
-const eye2 = document.getElementById("eye2");
+function iniciarRegistro() {
+    const camposPassword = document.querySelectorAll(".signup-password");
 
-if(eye1){
+    camposPassword.forEach((contenedor) => {
+        const input = contenedor.querySelector("input");
+        const icono = contenedor.querySelector("i");
 
-    eye1.onclick=()=>{
+        if (!input || !icono) return;
 
-        const pass=document.getElementById("pass1");
+        icono.onclick = () => {
+            const oculto = input.type === "password";
 
-        if(pass.type=="password"){
-
-            pass.type="text";
-
-            eye1.classList.replace("fa-eye","fa-eye-slash");
-
-        }else{
-
-            pass.type="password";
-
-            eye1.classList.replace("fa-eye-slash","fa-eye");
-
-        }
-
-    }
-
+            input.type = oculto ? "text" : "password";
+            icono.classList.toggle("fa-eye", !oculto);
+            icono.classList.toggle("fa-eye-slash", oculto);
+        };
+    });
 }
 
-if(eye2){
-
-    eye2.onclick=()=>{
-
-        const pass=document.getElementById("pass2");
-
-        if(pass.type=="password"){
-
-            pass.type="text";
-
-            eye2.classList.replace("fa-eye","fa-eye-slash");
-
-        }else{
-
-            pass.type="password";
-
-            eye2.classList.replace("fa-eye-slash","fa-eye");
-
-        }
-
-    }
-
-}
+window.iniciarRegistro = iniciarRegistro;

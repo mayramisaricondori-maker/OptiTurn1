@@ -84,23 +84,3 @@ function cancelarAsistencia() {
     guardarTurnoActivo(turno);
     pintarEstadoAsistencia(turno.estado);
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    const app = document.getElementById("app");
-
-    if (!app) return;
-
-    const observador = new MutationObserver(() => {
-        const pantalla = document.querySelector(".notificaciones-screen");
-
-        if (pantalla && !pantalla.dataset.iniciada) {
-            pantalla.dataset.iniciada = "true";
-            iniciarNotificaciones();
-        }
-    });
-
-    observador.observe(app, {
-        childList: true,
-        subtree: true
-    });
-});

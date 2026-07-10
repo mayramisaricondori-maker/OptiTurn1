@@ -1,212 +1,66 @@
-<div class="perfil-container">
-
-
-<header class="perfil-header">
-
-<button id="btnVolverDashboard">
-
-<i class="fa-solid fa-arrow-left"></i>
-
-</button>
-
-
-<h3>
-Configuración
-</h3>
-
-
-</header>
-
-
-
-
-
-<section class="perfil-user">
-
-
-<div class="avatar">
-
-<i class="fa-solid fa-user"></i>
-
-</div>
-
-
-<div>
-
-<h4>
-José Suarez
-</h4>
-
-
-<p>
-jose.suarez@gmail.com
-</p>
-
-
-</div>
-
-
-<i class="fa-solid fa-chevron-right"></i>
-
-
-</section>
-
-
-
-
-
-
-
-<h5>
-Cuenta
-</h5>
-
-
-<div class="perfil-menu">
-
-
-<button>
-
-<i class="fa-solid fa-user"></i>
-
-Información personal
-
-<i class="fa-solid fa-chevron-right"></i>
-
-</button>
-
-
-
-<button>
-
-<i class="fa-solid fa-credit-card"></i>
-
-Métodos de pago
-
-<i class="fa-solid fa-chevron-right"></i>
-
-</button>
-
-
-
-<button>
-
-<i class="fa-solid fa-shield"></i>
-
-Seguridad y privacidad
-
-<i class="fa-solid fa-chevron-right"></i>
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<h5>
-Preferencias
-</h5>
-
-
-<div class="perfil-menu">
-
-
-<button onclick="cargarVista('notificaciones.html')">
-
-<i class="fa-solid fa-bell"></i>
-
-Notificaciones
-
-<i class="fa-solid fa-chevron-right"></i>
-
-</button>
-
-
-
-<button>
-
-<i class="fa-solid fa-moon"></i>
-
-Tema
-
-<i class="fa-solid fa-chevron-right"></i>
-
-</button>
-
-
-
-<button>
-
-<i class="fa-solid fa-globe"></i>
-
-Idioma
-
-<i class="fa-solid fa-chevron-right"></i>
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-
-<h5>
-Soporte
-</h5>
-
-
-<div class="perfil-menu">
-
-
-<button onclick="cargarVista('soporte.html')">
-
-<i class="fa-solid fa-circle-question"></i>
-
-Centro de ayuda
-
-<i class="fa-solid fa-chevron-right"></i>
-
-</button>
-
-
-
-<button>
-
-<i class="fa-solid fa-circle-info"></i>
-
-Acerca de OptiTurn
-
-<i class="fa-solid fa-chevron-right"></i>
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-<button 
-class="logout"
-id="btnCerrarSesion">
-
-Cerrar sesión
-
-</button>
+<div class="app-screen">
+
+    <header class="app-header">
+        <button class="app-back-btn" onclick="cargarVista('dashboard.html')">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="app-header-title">
+            <h2>Perfil</h2>
+            <p>Información del usuario</p>
+        </div>
+    </header>
+
+    <section class="app-card perfil-card">
+
+        <div class="perfil-avatar">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <h3>Mayra</h3>
+        <p>Usuario registrado en OptiTurn</p>
+
+        <div class="perfil-info">
+            <div>
+                <span>Correo</span>
+                <strong>mayra@optiturn.com</strong>
+            </div>
+
+            <div>
+                <span>Turnos realizados</span>
+                <strong>8</strong>
+            </div>
+
+            <div>
+                <span>Estado</span>
+                <strong>Activo</strong>
+            </div>
+        </div>
+
+    </section>
+
+    <nav class="bottom-nav">
+
+        <div onclick="cargarVista('dashboard.html')">
+            <i class="fa-solid fa-house"></i>
+            <span>Inicio</span>
+        </div>
+
+        <div onclick="cargarVista('establecimientos.html')">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Buscar</span>
+        </div>
+
+        <div onclick="cargarVista('misTurnos.html')">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Reservas</span>
+        </div>
+
+        <div class="active" onclick="cargarVista('perfil.html')">
+            <i class="fa-solid fa-user"></i>
+            <span>Perfil</span>
+        </div>
+
+    </nav>
 
 </div>

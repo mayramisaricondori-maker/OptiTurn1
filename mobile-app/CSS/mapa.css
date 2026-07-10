@@ -1,242 +1,213 @@
-.mapa-container{
-
-    height:100%;
-    background:#F5F7FB;
-
-    padding:18px;
-
-    display:flex;
-    flex-direction:column;
-
+.mapa-screen {
+    min-height: 100%;
+    background: var(--bg-app);
+    padding: 48px 18px 76px;
+    position: relative;
 }
 
-.mapa-header{
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    position:relative;
-
-    margin-bottom:18px;
-
+.mapa-header {
+    display: grid;
+    grid-template-columns: 42px 1fr 42px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
 }
 
-.back-btn{
-
-    position:absolute;
-    left:0;
-
-    border:none;
-    background:none;
-
-    font-size:22px;
-
-    cursor:pointer;
-
+.mapa-title {
+    text-align: center;
 }
 
-.mapa-header h2{
-
-    font-size:24px;
-    color:#222;
-
+.mapa-title h2 {
+    color: var(--text-main);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.1;
 }
 
-.search-box{
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:14px 18px;
-
-    display:flex;
-    align-items:center;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.06);
-
+.mapa-title p {
+    color: var(--text-muted);
+    font-size: 11px;
+    margin-top: 4px;
 }
 
-.search-box i{
-
-    color:#999;
-
+.mapa-search {
+    height: 50px;
+    background: var(--white);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 16px;
+    color: var(--text-muted);
+    font-size: 13px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 16px;
+    cursor: pointer;
 }
 
-.search-box input{
-
-    border:none;
-    outline:none;
-
-    flex:1;
-
-    margin-left:10px;
-
+.mapa-search i {
+    color: var(--text-soft);
+    font-size: 15px;
 }
 
-.mapa{
-
-    margin-top:15px;
-
-    flex:1;
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:20px;
-
+.mapa-contenedor {
+    height: 295px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #EEF4FF, #F8FAFC);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #E5EAF3;
+    margin-bottom: 16px;
 }
 
-.mapa-img{
-
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
+.mapa-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(23, 105, 255, .06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 105, 255, .06) 1px, transparent 1px);
+    background-size: 42px 42px;
 }
 
-.pin{
-
-    position:absolute;
-
-    color:#2563EB;
-
-    font-size:34px;
-
+.map-pin {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-blue);
+    font-size: 18px;
 }
 
-.pin.activo{
-
-    color:#EF4444;
-
+.pin-principal {
+    background: #EF4444;
+    left: 48%;
+    top: 43%;
+    transform: translate(-50%, -50%);
 }
 
-.pin1{
-
-    top:15%;
-    left:10%;
-
+.pin-uno {
+    left: 18%;
+    top: 25%;
 }
 
-.pin2{
-
-    top:18%;
-    right:28%;
-
+.pin-dos {
+    right: 22%;
+    top: 27%;
 }
 
-.pin3{
-
-    top:42%;
-    left:40%;
-
+.pin-tres {
+    left: 52%;
+    bottom: 18%;
 }
 
-.pin4{
-
-    bottom:18%;
-    left:45%;
-
+.user-location {
+    position: absolute;
+    left: 18px;
+    bottom: 16px;
+    background: var(--white);
+    border-radius: 999px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    color: var(--text-muted);
+    box-shadow: var(--shadow-soft);
 }
 
-.nearby-card{
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:16px;
-
-    margin-top:15px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-
-    cursor:pointer;
-
+.user-location i {
+    color: var(--primary);
 }
 
-.nearby-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:15px;
-
+.mapa-card {
+    background: var(--white);
+    border-radius: 22px;
+    padding: 16px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 16px;
 }
 
-.nearby-header span{
-
-    color:#2563EB;
-
-    font-weight:600;
-
+.mapa-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
 }
 
-.nearby-info{
-
-    display:flex;
-
-    align-items:center;
-
+.mapa-card-header h3 {
+    color: var(--text-main);
+    font-size: 18px;
+    font-weight: 700;
 }
 
-.logo{
-
-    width:55px;
-
-    height:55px;
-
-    object-fit:contain;
-
-    margin-right:15px;
-
+.mapa-card-header button {
+    border: none;
+    background: transparent;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
 }
 
-.nearby-info h4{
-
-    margin-bottom:5px;
-
+.establecimiento-mapa {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 16px;
 }
 
-.nearby-info p{
-
-    color:#777;
-
+.establecimiento-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
 }
 
-.bottom-nav{
-
-    margin-top:15px;
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:15px;
-
-    display:flex;
-
-    justify-content:space-around;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-
+.establecimiento-info {
+    flex: 1;
 }
 
-.bottom-nav i{
-
-    font-size:22px;
-
-    color:#888;
-
+.establecimiento-info h4 {
+    color: var(--text-main);
+    font-size: 15px;
+    font-weight: 700;
 }
 
-.bottom-nav .active{
+.establecimiento-info p {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin: 3px 0 8px;
+}
 
-    color:#2563EB;
+.mapa-detalles {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
 
+.mapa-detalles span {
+    color: var(--primary);
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mapa-detalles strong {
+    font-weight: 600;
+}
+
+.mapa-bottom-nav {
+    position: sticky;
+    bottom: 0;
 }

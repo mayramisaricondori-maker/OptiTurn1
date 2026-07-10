@@ -156,12 +156,6 @@ button:disabled {
     transform: none;
 }
 
-/* Íconos de la barra inferior */
-
-.bottom-nav i:hover {
-    color: #2563EB;
-    transform: translateY(-2px);
-}
 
 /* Tarjetas seleccionadas manualmente */
 
@@ -170,4 +164,483 @@ button:disabled {
     color: #2563EB !important;
     border: 1px solid rgba(37, 99, 235, 0.25) !important;
     box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18) !important;
+}
+
+/* ===========================
+   SISTEMA VISUAL OPTITURN
+=========================== */
+
+:root {
+    --primary: #1769FF;
+    --primary-dark: #0F4FD8;
+    --primary-soft: #EAF2FF;
+
+    --success: #20B15A;
+    --success-soft: #E9F9EF;
+
+    --danger: #DC2626;
+    --danger-soft: #FEE2E2;
+
+    --warning: #F59E0B;
+    --warning-soft: #FEF3C7;
+
+    --text-main: #101C3D;
+    --text-muted: #64748B;
+    --text-soft: #94A3B8;
+
+    --bg-app: #F5F7FB;
+    --white: #FFFFFF;
+    --border: #DCE6F5;
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 18px;
+    --radius-xl: 22px;
+
+    --shadow-soft: 0 5px 15px rgba(0, 0, 0, .06);
+    --shadow-blue: 0 8px 18px rgba(23, 105, 255, .18);
+}
+
+/* Pantalla base */
+
+.app-screen {
+    min-height: 100%;
+    background: var(--bg-app);
+    padding: 48px 18px 76px;
+}
+
+/* Header base para pantallas internas */
+
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.app-back-btn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 14px;
+    background: var(--white);
+    color: var(--primary);
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-soft);
+}
+
+.app-header-title h2 {
+    color: var(--primary);
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.app-header-title p {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Títulos de sección */
+
+.section-title {
+    color: var(--text-main);
+    font-size: 19px;
+    font-weight: 700;
+    margin: 22px 0 14px;
+}
+
+/* Tarjetas */
+
+.app-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+    padding: 18px;
+}
+
+/* Botones base */
+
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+    width: 100%;
+    min-height: 46px;
+    border: none;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.btn-danger {
+    background: var(--danger-soft);
+    color: var(--danger);
+}
+
+/* Interacción general */
+
+button,
+.action,
+.categoria,
+.resultado-card,
+.search-container,
+.support-link,
+.faq-item,
+.bottom-nav div,
+.bottom-nav i {
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+}
+
+button,
+.action,
+.categoria,
+.resultado-card,
+.search-container,
+.support-link,
+.faq-item,
+.bottom-nav div,
+.bottom-nav i {
+    cursor: pointer;
+}
+
+button:hover:not(:disabled),
+.action:hover,
+.categoria:hover,
+.resultado-card:hover,
+.search-container:hover,
+.support-link:hover,
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-blue);
+}
+
+button:active:not(:disabled),
+.action:active,
+.categoria:active,
+.resultado-card:active,
+.support-link:active,
+.faq-item:active,
+.bottom-nav div:active {
+    transform: scale(.97);
+}
+
+button:disabled {
+    opacity: .85;
+    cursor: default;
+    transform: none;
+}
+
+/* Utilidad */
+
+.oculto {
+    display: none !important;
+}
+
+/* ===========================
+   ESTRUCTURA GLOBAL DEFINITIVA
+=========================== */
+
+.phone #app {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--bg-app);
+
+    opacity: 1;
+    transition: opacity 0.12s ease;
+}
+
+.phone #app.app-cargando {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.phone #app.app-interna > .vista-activa {
+    width: 100%;
+    height: 100% !important;
+    min-height: 100% !important;
+
+    position: relative;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+}
+
+.phone #app.app-interna > .vista-activa::-webkit-scrollbar {
+    display: none;
+}
+
+
+.phone #app.app-interna > .vista-activa.con-barra-inferior {
+    padding-bottom: 90px !important;
+}
+
+
+
+.phone #app.app-interna > .dashboard.vista-activa {
+    padding-top: 42px !important;
+}
+
+/* ===========================
+   ENCABEZADOS
+=========================== */
+
+.phone #app .app-header,
+.phone #app .mapa-header,
+.phone #app .servicios-header,
+.phone #app .header-establecimientos,
+.phone #app .noti-header,
+.phone #app .soporte-header {
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+
+    min-height: 42px;
+
+    align-items: center;
+}
+
+.phone #app .app-header-title h2,
+.phone #app .mapa-title h2,
+.phone #app .servicios-title h2,
+.phone #app .header-establecimientos h2 {
+    color: var(--primary) !important;
+
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+}
+
+.phone #app .app-header-title p,
+.phone #app .mapa-title p,
+.phone #app .servicios-title p {
+    color: var(--text-muted) !important;
+
+    font-size: 11px !important;
+    margin-top: 3px !important;
+}
+
+.phone #app .app-back-btn,
+.phone #app .back-btn,
+.phone #app .btn-back {
+    width: 42px !important;
+    height: 42px !important;
+
+    flex-shrink: 0;
+}
+
+/* ===========================
+   BARRA INFERIOR FIJA
+=========================== */
+
+.phone #app > .bottom-nav {
+    position: absolute !important;
+
+    left: 18px !important;
+    right: 18px !important;
+    bottom: 12px !important;
+
+    width: auto !important;
+    max-width: none !important;
+    height: 58px !important;
+
+    margin: 0 !important;
+    padding: 8px 10px !important;
+
+    transform: none !important;
+
+    background: var(--white) !important;
+
+    border-radius: 20px !important;
+
+    box-shadow:
+        0 8px 22px rgba(15, 23, 42, 0.14) !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+
+    z-index: 1000 !important;
+}
+
+.phone #app > .bottom-nav > div {
+    min-width: 58px !important;
+    height: 42px !important;
+
+    border-radius: 14px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 3px !important;
+
+    color: var(--text-muted) !important;
+
+    font-size: 10px !important;
+    font-weight: 500 !important;
+
+    cursor: pointer;
+
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.phone #app > .bottom-nav > div i {
+    font-size: 16px !important;
+}
+
+.phone #app > .bottom-nav > div.active {
+    color: var(--primary) !important;
+    background: var(--primary-soft) !important;
+    font-weight: 700 !important;
+}
+
+.phone #app > .bottom-nav > div:hover {
+    color: var(--primary) !important;
+    background: #F1F6FF !important;
+
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* ===========================
+   ESTABLECIMIENTOS
+=========================== */
+
+.phone #app.app-interna > .establecimientos.vista-activa {
+    display: flex !important;
+    flex-direction: column !important;
+
+    overflow: hidden !important;
+
+    padding: 45px 18px 90px !important;
+}
+
+.phone #app .header-establecimientos {
+    display: grid !important;
+    grid-template-columns: 42px 1fr 42px !important;
+
+    gap: 8px !important;
+
+    flex-shrink: 0;
+}
+
+.phone #app .header-establecimientos h2 {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.phone #app .establecimientos .search-box,
+.phone #app .establecimientos .categorias {
+    flex-shrink: 0;
+}
+
+.phone #app .establecimientos .resultados {
+    flex: 1 !important;
+
+    min-height: 0;
+
+    overflow-y: auto !important;
+
+    padding-bottom: 10px !important;
+
+    scrollbar-width: none;
+}
+
+.phone #app .establecimientos .resultados::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===========================
+   PERFIL
+=========================== */
+
+.perfil-card {
+    padding: 18px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.perfil-avatar {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 12px;
+
+    border-radius: 18px;
+    background: var(--primary-soft);
+    color: var(--primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+}
+
+.perfil-card h3 {
+    color: var(--text-main);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.perfil-card > p {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 16px 0 0;
+}
+
+.perfil-info div {
+    padding: 11px;
+    border: 1px solid #E5EAF3;
+    border-radius: 14px;
+    background: #F8FAFC;
+    text-align: left;
+}
+
+.perfil-info span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.perfil-info strong {
+    color: var(--text-main);
+    font-size: 13px;
 }

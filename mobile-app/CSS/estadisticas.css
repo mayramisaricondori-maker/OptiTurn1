@@ -1,0 +1,241 @@
+.estadistica-screen {
+    height: 100%;
+    background: var(--bg-app);
+    padding: 48px 18px 22px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.estadistica-screen::-webkit-scrollbar {
+    width: 0;
+}
+
+.tiempo-resumen {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.tiempo-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.tiempo-resumen span {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.tiempo-resumen h3 {
+    color: var(--text-main);
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 4px;
+}
+
+.tiempo-resumen p {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.tiempo-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tiempo-item {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    box-shadow: var(--shadow-soft);
+}
+
+.tiempo-item div {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tiempo-item h4 {
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.tiempo-item p {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.horarios-lista {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.horario-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid transparent;
+}
+
+.horario-card span {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.horario-card strong {
+    display: block;
+    color: var(--text-main);
+    font-size: 20px;
+    margin-top: 3px;
+}
+
+.horario-card p {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.horario-card.recomendado {
+    border-color: rgba(32, 177, 90, .35);
+    background: var(--success-soft);
+}
+
+.horario-card.recomendado strong {
+    color: var(--success);
+}
+
+.recomendacion-principal {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.recomendacion-icon {
+    width: 66px;
+    height: 66px;
+    border-radius: 22px;
+    background: var(--success-soft);
+    color: var(--success);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 14px;
+}
+
+.recomendacion-principal span {
+    color: var(--success);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.recomendacion-principal h3 {
+    color: var(--text-main);
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 6px;
+}
+
+.recomendacion-principal p {
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.45;
+    margin-top: 8px;
+}
+
+.comparacion-horarios {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.comparacion-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: var(--shadow-soft);
+}
+
+.comparacion-card span {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.comparacion-card h4 {
+    color: var(--text-main);
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.comparacion-card p {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.comparacion-card.alto span {
+    color: var(--danger);
+}
+
+.comparacion-card.medio span {
+    color: var(--warning);
+}
+
+.comparacion-card.bajo {
+    background: var(--success-soft);
+    border: 1px solid rgba(32, 177, 90, .25);
+}
+
+.comparacion-card.bajo span {
+    color: var(--success);
+}
+
+.recomendacion-extra {
+    margin-bottom: 16px;
+}
+
+.recomendacion-extra h3 {
+    color: var(--text-main);
+    font-size: 16px;
+}
+
+.recomendacion-extra p {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 5px;
+    line-height: 1.45;
+}

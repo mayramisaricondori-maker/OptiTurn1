@@ -1,0 +1,96 @@
+<div class="app-screen turnos-screen">
+
+    <header class="app-header">
+        <button class="app-back-btn" onclick="cargarVista('dashboard.html')">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="app-header-title">
+            <h2>Mis turnos</h2>
+            <p>Consulta tus reservas actuales</p>
+        </div>
+    </header>
+
+    <section class="turno-card">
+
+        <div class="turno-top">
+            <div class="turno-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+            <div>
+                <span>Turno activo</span>
+                <h3 id="turnoServicio">Duplicado de DNI</h3>
+                <p id="turnoEntidad">RENIEC</p>
+            </div>
+        </div>
+
+        <div class="turno-detalles">
+            <div>
+                <i class="fa-solid fa-clock"></i>
+                <strong id="turnoHorario">09:30 AM</strong>
+                <span>Horario</span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-users"></i>
+                <strong>12</strong>
+                <span>Personas</span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-hourglass-half"></i>
+                <strong>35 min</strong>
+                <span>Espera</span>
+            </div>
+        </div>
+
+        <button class="btn-primary" onclick="cargarVista('qr.html')">
+            Ver código QR
+        </button>
+
+        <button class="btn-secondary" onclick="reprogramarTurno()">
+            Reprogramar turno
+        </button>
+
+        <button class="btn-danger" onclick="cancelarTurno()">
+            Cancelar turno
+        </button>
+
+    </section>
+
+    <h3 class="section-title">Historial</h3>
+
+    <section class="historial-card">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <div>
+            <h4>SUNAT - Orientación tributaria</h4>
+            <p>Atendido anteriormente</p>
+        </div>
+    </section>
+
+    <nav class="bottom-nav">
+
+        <div onclick="cargarVista('dashboard.html')">
+            <i class="fa-solid fa-house"></i>
+            <span>Inicio</span>
+        </div>
+
+        <div onclick="cargarVista('establecimientos.html')">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Buscar</span>
+        </div>
+
+        <div class="active" onclick="cargarVista('misTurnos.html')">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Reservas</span>
+        </div>
+
+        <div onclick="cargarVista('perfil.html')">
+            <i class="fa-solid fa-user"></i>
+            <span>Perfil</span>
+        </div>
+
+    </nav>
+
+</div>

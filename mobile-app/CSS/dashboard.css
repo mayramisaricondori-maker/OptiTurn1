@@ -1,85 +1,61 @@
-.dashboard{
-
-padding:25px 18px 70px;
-
+.dashboard {
+    min-height: 100%;
+    background: var(--bg-app);
+    padding: 25px 18px 76px;
 }
-
-
 
 
 /* HEADER */
 
-.dash-header{
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
+.dash-header {
+    height: 44px;
+    display: grid;
+    grid-template-columns: 42px 1fr 42px;
+    align-items: center;
+    margin-top: 12px;
 }
 
-
-.dash-header h3{
-
-font-size:16px;
-
-color:#101C3D;
-
+.header-space {
+    width: 42px;
+    height: 42px;
 }
 
-
-
-.back-btn,
-.notification-btn{
-
-border:none;
-
-background:none;
-
-color:#101C3D;
-
-font-size:18px;
-
+.dash-header h3 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
 }
 
-
-
-.notification-btn{
-
-position:relative;
-
+.notification-btn {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 14px;
+    background: var(--white);
+    color: var(--text-main);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-soft);
 }
 
-
-.notification-btn span{
-
-position:absolute;
-
-top:-7px;
-
-right:-8px;
-
-background:#1769FF;
-
-color:white;
-
-font-size:9px;
-
-width:15px;
-
-height:15px;
-
-border-radius:50%;
-
-text-align:center;
-
+.notification-btn span {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 9px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-
-
-
-
 
 
 /* BIENVENIDA */
@@ -483,68 +459,3 @@ font-size:9px;
 
 }
 
-
-
-
-
-
-
-
-/* MENU */
-
-
-.bottom-nav{
-
-position:absolute;
-
-bottom:0;
-
-left:0;
-
-width:100%;
-
-height:60px;
-
-background:white;
-
-border-top:1px solid #ddd;
-
-display:flex;
-
-justify-content:space-around;
-
-align-items:center;
-
-}
-
-
-
-.bottom-nav div{
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-font-size:11px;
-
-color:#64748B;
-
-}
-
-
-
-.bottom-nav i{
-
-font-size:16px;
-
-}
-
-
-
-.bottom-nav .active{
-
-color:#1769FF;
-
-}

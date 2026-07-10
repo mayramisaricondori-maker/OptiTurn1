@@ -1,25 +1,16 @@
-const ojo = document.getElementById("eye");
+function iniciarLogin() {
+    const ojo = document.getElementById("eye");
+    const password = document.getElementById("password");
 
-if(ojo){
+    if (!ojo || !password) return;
 
-ojo.addEventListener("click",()=>{
+    ojo.onclick = () => {
+        const oculto = password.type === "password";
 
-const pass=document.getElementById("password");
-
-if(pass.type=="password"){
-
-pass.type="text";
-
-ojo.innerHTML="🙈";
-
-}else{
-
-pass.type="password";
-
-ojo.innerHTML="👁";
-
+        password.type = oculto ? "text" : "password";
+        ojo.classList.toggle("fa-eye", !oculto);
+        ojo.classList.toggle("fa-eye-slash", oculto);
+    };
 }
 
-});
-
-}
+window.iniciarLogin = iniciarLogin;

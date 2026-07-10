@@ -122,6 +122,7 @@
     border: 1px solid #EEF1F6;
     border-radius: 15px;
     padding: 12px;
+    cursor: pointer;
 }
 
 .faq-item i {
@@ -130,22 +131,17 @@
 }
 
 .faq-item p {
+    flex: 1;
     color: #333;
     font-size: 13px;
     line-height: 1.4;
 }
 
-.faq-item {
-    cursor: pointer;
-}
-
-.faq-item p {
-    flex: 1;
-}
 
 .faq-arrow {
     color: #94A3B8 !important;
     font-size: 12px !important;
+    transition: transform 0.2s ease;
 }
 
 .faq-answer {
@@ -172,9 +168,6 @@
     margin-top: 12px;
 }
 
-.faq-arrow {
-    transition: transform 0.2s ease;
-}
 
 .faq-arrow.rotar {
     transform: rotate(180deg);

@@ -5,31 +5,16 @@
 
 <header class="dash-header">
 
-    <button class="back-btn">
-        <i class="fa-solid fa-arrow-left"></i>
-    </button>
+    <div class="header-space"></div>
 
+    <h3>OptiTurn</h3>
 
-    <h3>
-        OptiTurn
-    </h3>
-
-
-    <button class="notification-btn">
-
+    <button class="notification-btn" onclick="cargarVista('notificaciones.html')">
         <i class="fa-solid fa-bell"></i>
-
-        <span>
-        3
-        </span>
-
+        <span>3</span>
     </button>
-
 
 </header>
-
-
-
 
 
 <!-- BIENVENIDA -->
@@ -49,40 +34,23 @@ Evita filas y conoce tu tiempo de espera antes de ir.
 </section>
 
 
-
-
-
-
-
-
 <!-- BUSCADOR -->
 
-<div class="search-container"
- onclick="cargarVista('establecimientos.html')">
+<div class="search-container" onclick="cargarVista('establecimientos.html')">
 
+    <i class="fa-solid fa-magnifying-glass"></i>
 
-<i class="fa-solid fa-magnifying-glass"></i>
+    <input 
+        type="text"
+        placeholder="Buscar servicio o establecimiento"
+        readonly
+    >
 
-
-<input 
-type="text"
-placeholder="Buscar servicio o establecimiento"
->
-
-
-<button onclick="cargarVista('busqueda.html')">
-
-<i class="fa-solid fa-chevron-right"></i>
-
-</button>
-
+    <button type="button" onclick="event.stopPropagation(); cargarVista('establecimientos.html')">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
 
 </div>
-
-
-
-
-
 
 
 
@@ -112,11 +80,7 @@ Elige servicio y asegura tu atención
 </div>
 
 
-
-
-
-<div class="action green"
-onclick="cargarVista('reservas.html')">
+<div class="action green" onclick="cargarVista('misTurnos.html')">
 
 
 <i class="fa-solid fa-ticket"></i>
@@ -183,29 +147,14 @@ A025
 </div>
 
 
-
-
-
-
-
 <div class="turn-info">
 
 
-<div>
-
-<i class="fa-solid fa-users"></i>
-
-<span>
-8
-</span>
-
-<small>
-Personas antes
-</small>
-
+<div onclick="cargarVista('fila.html')" style="cursor:pointer;">
+    <i class="fa-solid fa-users"></i>
+    <strong>8</strong>
+    <span>Personas antes</span>
 </div>
-
-
 
 
 <div>
@@ -260,18 +209,10 @@ Ver código QR
 </section>
 
 
-
-
-
-
-
-
-
 <!-- ESTADO -->
 
 
-<section class="status-card"
-onclick="cargarVista('gestion.html')">
+<section class="status-card" onclick="cargarVista('congestion.html')">
 
 
 <h5>
@@ -343,69 +284,29 @@ Mejor horario
 </section>
 
 
-
-
-
-
-
-
 <!-- NAVEGACION -->
-
 
 <nav class="bottom-nav">
 
+    <div class="active" onclick="cargarVista('dashboard.html')">
+        <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
+    </div>
 
-<div class="active"
-onclick="cargarVista('dashboard.html')">
+    <div onclick="cargarVista('establecimientos.html')">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Buscar</span>
+    </div>
 
+    <div onclick="cargarVista('misTurnos.html')">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Reservas</span>
+    </div>
 
-<i class="fa-solid fa-house"></i>
-
-
-<span>
-Inicio
-</span>
-
-
-</div>
-
-
-
-
-<div onclick="cargarVista('reservas.html')">
-
-
-<i class="fa-solid fa-calendar-days"></i>
-
-
-<span>
-Reservas
-</span>
-
-
-</div>
-
-
-
-
-
-<div onclick="cargarVista('perfil.html')">
-
-
-<i class="fa-solid fa-user"></i>
-
-
-<span>
-Perfil
-</span>
-
-
-</div>
-
-
+    <div onclick="cargarVista('perfil.html')">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+    </div>
 
 </nav>
-
-
-
 </div>

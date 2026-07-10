@@ -1,92 +1,105 @@
-<div class="mapa-container">
+<div class="mapa-screen">
 
-    <!-- Header -->
     <header class="mapa-header">
-
-        <button class="back-btn" id="btnVolver">
+        <button class="app-back-btn" onclick="cargarVista('establecimientos.html')">
             <i class="fa-solid fa-arrow-left"></i>
         </button>
 
-        <h2>Mapa</h2>
-
+        <div class="mapa-title">
+            <h2>Mapa</h2>
+            <p>Ubica establecimientos cercanos</p>
+        </div>
     </header>
 
-    <!-- Buscador -->
-    <div class="search-box">
-
+    <div class="mapa-search" onclick="cargarVista('establecimientos.html')">
         <i class="fa-solid fa-magnifying-glass"></i>
-
-        <input
-            type="text"
-            placeholder="Buscar establecimiento"
-        >
-
+        <span>Buscar establecimiento</span>
     </div>
 
-    <!-- Mapa -->
-    <section class="mapa">
+    <section class="mapa-contenedor">
 
-        <img src="../assets/img/mapa.png" class="mapa-img">
+        <div class="mapa-grid"></div>
 
-        <div class="pin pin1">
+        <div class="map-pin pin-principal">
             <i class="fa-solid fa-location-dot"></i>
         </div>
 
-        <div class="pin pin2">
+        <div class="map-pin pin-uno">
             <i class="fa-solid fa-location-dot"></i>
         </div>
 
-        <div class="pin pin3 activo">
+        <div class="map-pin pin-dos">
             <i class="fa-solid fa-location-dot"></i>
         </div>
 
-        <div class="pin pin4">
+        <div class="map-pin pin-tres">
             <i class="fa-solid fa-location-dot"></i>
+        </div>
+
+        <div class="user-location">
+            <i class="fa-solid fa-circle-dot"></i>
+            <span>Tu ubicación</span>
         </div>
 
     </section>
 
-    <!-- Tarjeta -->
-    <div class="nearby-card" id="btnServicios">
+    <section class="mapa-card">
 
-        <div class="nearby-header">
-
+        <div class="mapa-card-header">
             <h3>Cercanos a ti</h3>
-
-            <span>Ver todo</span>
-
+            <button onclick="cargarVista('establecimientos.html')">Ver todo</button>
         </div>
 
-        <div class="nearby-info">
-
-            <img
-                src="../assets/logo/reniec.png"
-                class="logo"
-            >
-
-            <div>
-
-                <h4>RENIEC SEDE PRINCIPAL</h4>
-
-                <p>Av. Arequipa 1234, Lima</p>
-
+        <div class="establecimiento-mapa">
+            <div class="establecimiento-icon">
+                <i id="mapaIcono" class="fa-solid fa-id-card"></i>
             </div>
 
+            <div class="establecimiento-info">
+                <h4 id="mapaNombre">RENIEC</h4>
+                <p id="mapaDescripcion">Registro de identificación</p>
+
+                <div class="mapa-detalles">
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <strong id="mapaDistancia">A 1.2 km</strong>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-clock"></i>
+                        <strong id="mapaTiempo">35 min</strong>
+                    </span>
+                </div>
+            </div>
         </div>
 
+        <button class="btn-primary" onclick="cargarVista('servicios.html')">
+            Ver servicios disponibles
+        </button>
+
+    </section>
+
+   <nav class="bottom-nav">
+
+    <div onclick="cargarVista('dashboard.html')">
+        <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
     </div>
 
-    <!-- Barra inferior -->
+    <div class="active" onclick="cargarVista('establecimientos.html')">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Buscar</span>
+    </div>
 
-    <nav class="bottom-nav">
-
-        <i class="fa-solid fa-house"></i>
-
-        <i class="fa-solid fa-map-location-dot active"></i>
-
+    <div onclick="cargarVista('misTurnos.html')">
         <i class="fa-solid fa-calendar-days"></i>
+        <span>Reservas</span>
+    </div>
 
+    <div onclick="cargarVista('perfil.html')">
         <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+    </div>
 
     </nav>
 
